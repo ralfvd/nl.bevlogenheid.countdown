@@ -5,13 +5,17 @@
     },
     "version": "0.0.1",
     "compatibility": "0.x || 1.x",
+    "description" : {
+	"en" : "Use CountDown timers in your flows to start/stop actions",
+        "nl" : "Gebruik CountDown timers om af te tellen naar een actie in een flow"
+    },
     "author": {
         "name": "Ralf van Dooren",
         "email": "ralfvd@gmail.com"
     },
 "images": {
-    "large": "./assets/images/large.jpg",
-    "small": "./assets/images/small.jpg"
+    "large": "./assets/images/large.png",
+    "small": "./assets/images/small.png"
   },
   "category": "tools",
   "dependencies": { },

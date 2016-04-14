@@ -23,4 +23,11 @@ There are 2 actions:
 
 The CountDown timer is heavily influenced and inspired by the BetterLogic app. https://apps.athom.com/app/net.i-dev.betterlogic
 
+Icons made by Freepik http://www.flaticon.com is licensed by "http://creativecommons.org/licenses/by/3.0/" Creative Commons BY 3.0
+
+### ToDo
+
+- Clean-up code
+- Optimize 'settings' screen 
+- Translation to NL
 
