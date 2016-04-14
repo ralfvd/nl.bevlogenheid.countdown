@@ -1,0 +1,109 @@
+{
+    "id": "nl.bevlogenheid.countdown",
+    "name": {
+        "en": "CountDown"
+    },
+    "version": "0.0.1",
+    "compatibility": "0.x || 1.x",
+    "author": {
+        "name": "Ralf van Dooren",
+        "email": "ralfvd@gmail.com"
+    },
+"images": {
+    "large": "./assets/images/large.jpg",
+    "small": "./assets/images/small.jpg"
+  },
+  "category": "tools",
+  "dependencies": { },
+  "flow": {
+    "triggers": [
+       {
+	"id": "countdown_test",
+ 	"title": {
+           "en": "Test"
+	}	
+       },
+       {
+	"id": "countdown_to_zero",
+	"title": {
+	   "en": "Timer reaches zero (0)"
+	},
+	"token": [
+          {
+	      "name": "variable",
+	      "title": {
+                 "en": "Variable"
+              }
+          }
+        ], 
+       "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Countdown timer name"
+            }
+          },
+	  {
+	    "name": "value",
+	    "type": "text"	
+	  }
+         ]
+       }
+       ],
+       "conditions": [
+       ],
+       "actions": [
+       {
+	"id": "set_countdown_timer",
+	"title": {
+	   "en": "Start countdown timer"
+        },
+         "args": 
+         [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "name"
+            }
+          },
+          {
+            "name": "value",
+            "type": "text",
+            "placeholder": 
+	      {
+              "en": "value"
+            }
+          }
+	  ]
+        },
+        {
+	 "id": "stop_countdown_timer",
+        "title": 
+          {
+           "en": "Stop countdown timer"
+          },
+         "args": 
+         [
+           {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": 
+              {
+              "en": "name"
+              }
+           },
+           {
+            "name": "value",
+            "type": "text",
+            "placeholder": 
+	      {
+              "en": "value"
+              }
+           }
+         ]
+        }
+        ] 
+   }
+}
