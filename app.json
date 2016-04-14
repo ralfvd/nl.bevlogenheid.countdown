@@ -22,12 +22,6 @@
   "flow": {
     "triggers": [
        {
-	"id": "countdown_test",
- 	"title": {
-           "en": "Test"
-	}	
-       },
-       {
 	"id": "countdown_to_zero",
 	"title": {
 	   "en": "Timer reaches zero (0)"
