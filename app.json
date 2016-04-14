@@ -43,11 +43,7 @@
             "placeholder": {
               "en": "Countdown timer name"
             }
-          },
-	  {
-	    "name": "value",
-	    "type": "text"	
-	  }
+          }
          ]
        }
        ],
@@ -92,14 +88,6 @@
             "placeholder": 
               {
               "en": "name"
-              }
-           },
-           {
-            "name": "value",
-            "type": "text",
-            "placeholder": 
-	      {
-              "en": "value"
               }
            }
          ]

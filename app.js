@@ -5,7 +5,7 @@ var util = require('./lib/util/util.js');
 
 var autoCompleteActions = require('./lib/autocomplete/actions.js');
 var autoCompleteConditions = require('./lib/autocomplete/conditions.js');
-var autoCompletetriggers = require('./lib/autocomplete/triggers.js');
+var autoCompleteTriggers = require('./lib/autocomplete/triggers.js');
 
 var flowActions = require('./lib/flow/actions.js');
 var flowConditions = require('./lib/flow/conditions.js');
@@ -18,11 +18,24 @@ var self = {
 
 	autoCompleteActions.createAutocompleteActions();
         autoCompleteConditions.createAutocompleteConditions();
-        autoCompletetriggers.createAutocompleteTriggers();
+        autoCompleteTriggers.createAutocompleteTriggers();
 	
 	flowActions.createActions();
-	flowConditions.createConditions();
-	flowTriggers.createTriggers();
+	//flowConditions.createConditions();
+	//flowTriggers.createTriggers();
+
+        Homey.manager('flow').on('trigger.countdown_to_zero', function (callback,args,state) {
+        Homey.log('----Flow: countdown_to_zero--'); 
+        Homey.log(args.variable.name);
+        Homey.log(state.variable);
+        if ( args.variable.name == state.variable ) {
+		Homey.log("Trigger activated");
+                callback(null,true);
+                return;
+           } else { 
+                callback(null, false); // true to make the flow continue, or false to abort
+         }
+        });
 
 	setInterval(timers_update.bind(this),5*1000);
 	function timers_update() {
@@ -37,12 +50,9 @@ var self = {
 				// Homey.manager('flow').trigger('countdown_test');
 				var tokens = { 'variable' : obj.name };
 				var state = { 'variable' : obj.name };
-				Homey.log(tokens);	
-				Homey.log(state);
-				Homey.manager('flow').trigger('countdown_to_zero', tokens, state, function(err, result){
-    					if( err ) return Homey.error(err);
-				}); 
-				//variableManager.updateVariable(obj.name,-1,'number');
+				Homey.manager('flow').trigger('countdown_to_zero', tokens, state);
+				Homey.log('after trigger');
+				variableManager.updateVariable(obj.name,-1,'number');
 			}
 			if (obj.value > 0) {
 				variableManager.updateVariable(obj.name, obj.value - 1, 'number');
