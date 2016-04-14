@@ -4,12 +4,12 @@ var variableManager = require('./lib/variablemanagement/variablemanagement.js');
 var util = require('./lib/util/util.js');
 
 var autoCompleteActions = require('./lib/autocomplete/actions.js');
-var autoCompleteConditions = require('./lib/autocomplete/conditions.js');
+//var autoCompleteConditions = require('./lib/autocomplete/conditions.js');
 var autoCompleteTriggers = require('./lib/autocomplete/triggers.js');
 
 var flowActions = require('./lib/flow/actions.js');
-var flowConditions = require('./lib/flow/conditions.js');
-var flowTriggers = require('./lib/flow/triggers.js');
+//var flowConditions = require('./lib/flow/conditions.js');
+//var flowTriggers = require('./lib/flow/triggers.js');
 
 var self = {
   init: function() {
@@ -17,7 +17,7 @@ var self = {
 	variableManager.init();
 
 	autoCompleteActions.createAutocompleteActions();
-        autoCompleteConditions.createAutocompleteConditions();
+        //autoCompleteConditions.createAutocompleteConditions();
         autoCompleteTriggers.createAutocompleteTriggers();
 	
 	flowActions.createActions();
@@ -37,7 +37,7 @@ var self = {
          }
         });
 
-	setInterval(timers_update.bind(this),5*1000);
+	setInterval(timers_update.bind(this),1*1000);
 	function timers_update() {
 		//Homey.log("Test 1 2 3" );
 		var currentVariables= variableManager.getVariables();

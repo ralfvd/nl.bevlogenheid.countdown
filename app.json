@@ -6,7 +6,7 @@
     "version": "0.0.1",
     "compatibility": "0.x || 1.x",
     "description" : {
-	"en" : "Use CountDown timers in your flows to start/stop actions",
+	"en" : "Use CountDown timers to initiate your flows",
         "nl" : "Gebruik CountDown timers om af te tellen naar een actie in een flow"
     },
     "author": {
