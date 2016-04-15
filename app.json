@@ -4,10 +4,10 @@
         "en": "CountDown"
     },
     "version": "0.0.1",
-    "compatibility": "0.x || 1.x",
+    "compatibility": ">=0.8.29",
     "description" : {
 	"en" : "Use CountDown timers to initiate your flows",
-        "nl" : "Gebruik CountDown timers om af te tellen naar een actie in een flow"
+        "nl" : "Gebruik CountDown timers als zandloper om af te tellen naar een actie in een flow"
     },
     "author": {
         "name": "Ralf van Dooren",
@@ -17,20 +17,22 @@
     "large": "./assets/images/large.png",
     "small": "./assets/images/small.png"
   },
-  "category": "tools",
+  "category": [ "tools" ],
   "dependencies": { },
   "flow": {
     "triggers": [
        {
 	"id": "countdown_to_zero",
 	"title": {
-	   "en": "Timer reaches zero (0)"
+	   "en": "Timer reaches zero (0)",
+	   "nl": "Zandloper leeg" 
 	},
 	"token": [
           {
 	      "name": "variable",
 	      "title": {
-                 "en": "Variable"
+                 "en": "Name timer",
+		 "nl": "Naam zandloper"
               }
           }
         ], 
@@ -39,7 +41,8 @@
             "name": "variable",
             "type": "autocomplete",
             "placeholder": {
-              "en": "Countdown timer name"
+              "en": "Countdown timer name",
+	      "nl": "Zandloper naam"
             }
           }
          ]
@@ -51,7 +54,8 @@
        {
 	"id": "set_countdown_timer",
 	"title": {
-	   "en": "Start countdown timer"
+	   "en": "Start countdown timer",
+           "nl": "Draai zandloper om"
         },
          "args": 
          [
@@ -67,7 +71,8 @@
             "type": "text",
             "placeholder": 
 	      {
-              "en": "value"
+              "en": "seconds",
+	      "nl": "seconden"
             }
           }
 	  ]
@@ -85,7 +90,8 @@
             "type": "autocomplete",
             "placeholder": 
               {
-              "en": "name"
+              "en": "name",
+	      "nl": "naam"
               }
            }
          ]

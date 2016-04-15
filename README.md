@@ -7,17 +7,26 @@ After installing the application, first visit the Homey Settings and navigate to
 There you can add CountDown timers.  If you already enter a value, it will immediately start counting down.
 If you see a value '-1', this means the countdown timer is not active and waiting to be set ( via an action card  in the flow )
 
-### Trigger
+### Flow support
+
+*Triggers* 
 
 There is 1 trigger: when a CountDown timer reaches 0. 
 
-### Actions
+*Actions*
 
 There are 2 actions:
 
 - Start CountDown timer: set a value and a number (in seconds)
 - Stop CountDown timer: the CountDown timer will be stopped (and resetted)
 
+*Conditions*
+
+No condition cards
+
+### Speech
+
+No speech support
 
 #### Acknowledgement
 
@@ -30,4 +39,12 @@ Icons made by Freepik http://www.flaticon.com is licensed by "http://creativecom
 - Clean-up code
 - Optimize 'settings' screen 
 - Translation to NL
+
+### Known bugs
+
+- Settings screen doesn't always update if a countdown timer updates
+
+### Changelog
+
+v0.0.1 2016-04-15 : First public release 
 
