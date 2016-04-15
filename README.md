@@ -49,6 +49,6 @@ The CountDown timer is heavily influenced and inspired by the BetterLogic app. h
 
 ### Changelog
 
-V0.0.2 2016-04-16 : Optimized settings screen
-v0.0.1 2016-04-15 : First public release 
+- V0.0.2 2016-04-16 : Optimized settings screen
+- v0.0.1 2016-04-15 : First public release 
 
