@@ -1,5 +1,9 @@
 ### Homey CountDown timer
-This is a CountDown timer which you can use 
+This is a CountDown timer which you can use to initiate flows.
+
+Examples: When motion is detected, turn on light and start a timer for 90 seconds
+	  After 11 seconds, when motion is detected again, restart the timer for 90 seconds
+	  When the timer reaches 0, there was no motion for 90 seconds, turn off the light.
 
 ### Settings
 After installing the application, first visit the Homey Settings and navigate to the 'CountDown' application.
