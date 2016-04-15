@@ -8,8 +8,9 @@ Examples: When motion is detected, turn on light and start a timer for 90 second
 ### Settings
 After installing the application, first visit the Homey Settings and navigate to the 'CountDown' application.
 
-There you can add CountDown timers.  If you already enter a value, it will immediately start counting down.
-If you see a value '-1', this means the countdown timer is not active and waiting to be set ( via an action card  in the flow )
+There you can add CountDown timers.
+ 
+If you see a value '-1', this means the countdown timer is not active and waiting to be set ( via an action card in the flow )
 
 ### Flow support
 
@@ -39,14 +40,15 @@ The CountDown timer is heavily influenced and inspired by the BetterLogic app. h
 ### ToDo
 
 - Clean-up code
-- Optimize 'settings' screen 
 - Translation to NL
 
 ### Known bugs
 
 - Settings screen doesn't always update if a countdown timer updates
+    - Workaround: Click 'CountDown' again in left-bar, after this, page will update when a timer is running
 
 ### Changelog
 
+V0.0.2 2016-04-16 : Optimized settings screen
 v0.0.1 2016-04-15 : First public release 
 

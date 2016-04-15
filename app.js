@@ -39,7 +39,6 @@ var self = {
 
 	setInterval(timers_update.bind(this),1*1000);
 	function timers_update() {
-		//Homey.log("Test 1 2 3" );
 		var currentVariables= variableManager.getVariables();
 		//Homey.log(currentVariables);
 	        currentVariables.forEach(function( obj) {
@@ -52,7 +51,7 @@ var self = {
 				var state = { 'variable' : obj.name };
 				Homey.manager('flow').trigger('countdown_to_zero', tokens, state);
 				Homey.log('after trigger');
-				variableManager.updateVariable(obj.name,-1,'number');
+				variableManager.updateVariable(obj.name,'-1','number');
 			}
 			if (obj.value > 0) {
 				variableManager.updateVariable(obj.name, obj.value - 1, 'number');

@@ -39,8 +39,8 @@
             }
             var variable = {
                 name: vm.newVariable.name,
-                type: vm.newVariable.type,
-                value: vm.newVariable.value,
+                type: "number",
+                value: "-1",
                 hasInsights: vm.newVariable.hasInsights,
                 lastChanged: getShortDate(),
                 remove:false

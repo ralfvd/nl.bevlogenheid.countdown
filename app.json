@@ -3,7 +3,7 @@
     "name": {
         "en": "CountDown"
     },
-    "version": "0.0.1",
+    "version": "0.0.2",
     "compatibility": ">=0.8.30",
     "description" : {
 	"en" : "Use CountDown timers to initiate your flows",

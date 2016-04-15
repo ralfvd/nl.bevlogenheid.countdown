@@ -10,8 +10,8 @@
 </head>
 
 <body ng-controller="VariableSettingsController as vm">
-    <h2>CountDown Variable management</h2>
-    <p>Be aware that removing variables could corrupt flows that are using that variable.</p>
+    <h2>CountDown timer management</h2>
+    <p>Be aware that removing timers could corrupt flows that are using that timer.</p>
     <div >
         <div class="panel panel-default">
             <div class="panel-heading">Add CountDown timer</div>
@@ -22,26 +22,7 @@
                         <input class="form-control" id="variableName" type="text" ng-model="vm.newVariable.name" placeholder="Name"><span class="error">{{vm.errorMessage}}</span>
                     </div>
                     <div class="form-group">
-                        <label for="variableType">Variable type (must be Number)</label>
-                        <select class="form-control" name="variableType" id="variableType" ng-model="vm.newVariable.type" ng-change="vm.selectUpdate(vm.newVariable.type)">
-                            <option value disbled="disabled" selected="selected">Select a value type</option>
-                            <option value="number">Number</option>
-                        </select>
-                    </div>
-                    <!--<div class="form-group">
-                        <label for="useInsight">Store insight</label>
-                        <input class="" id="useInsight" type="checkbox" ng-model="vm.newVariable.hasInsights" placeholder="Name"><span class="error">{{vm.errorMessage}}</span>
-                    </div>-->
-                    <div class="form-group">
-                        <label for="variableValue">Variable value</label>
-                        <div ng-switch on="vm.newVariable.type">
-                            <div ng-switch-when="boolean"><div ng-include="'addboolean.html'"></div></div>
-                            <div ng-switch-when="number"><div ng-include="'addnumber.html'"></div></div>
-                            <div ng-switch-default><div ng-include="'addstring.html'"><</div></div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-default" type="button" ng-disabled="!vm.newVariable.name||!vm.newVariable.type" ng-click="vm.addVariable()">Add variable</button>
+                        <button class="btn btn-default" type="button" ng-disabled="!vm.newVariable.name" ng-click="vm.addVariable()">Add timer </button>
                         <button class="btn btn-default" type="button" ng-click="vm.deleteAll()">Delete All</button>
                     </div>
                 </form>
@@ -52,10 +33,8 @@
             <thead>
                 <tr>
                     <th st-sort="name">Name</th>
-                    <th st-sort="type">Type</th>
-                    <th st-sort="type">Last set</th>
-                    <!--<th st-sort="value">Insight</th>-->
-                    <th st-sort="value">Value</th>
+                    <th st-sort="type">Last change</th>
+                    <th st-sort="value">Remaining seconds</th>
                     <th></th>
                 </tr>
                 <tr>
@@ -79,7 +58,7 @@
 
 <script type="text/ng-template" id="display">
         <td>{{variable.name}}</td>
-        <td>{{variable.type}}</td>
+        <!--<td>{{variable.type}}</td>-->
         <td>{{variable.lastChanged}}</td>
         <!--<td><input type='checkbox' disabled ng-model='variable.hasInsights' /></td>-->
 
@@ -92,7 +71,6 @@
 
 <script type="text/ng-template" id="edit">
         <td>{{vm.selected.name}}</td>
-        <td>{{vm.selected.type}}</td>
         <td>{{variable.lastChanged}}</td>
         <!--<td><input class="col-xs-2" id="variableValue" type="checkbox" ng-model="vm.selected.hasInsights" placeholder="value"></td>-->
         <td>
