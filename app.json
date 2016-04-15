@@ -4,7 +4,7 @@
         "en": "CountDown"
     },
     "version": "0.0.1",
-    "compatibility": ">=0.8.29",
+    "compatibility": ">=0.8.30",
     "description" : {
 	"en" : "Use CountDown timers to initiate your flows",
         "nl" : "Gebruik CountDown timers als zandloper om af te tellen naar een actie in een flow"
