@@ -1,7 +1,7 @@
 {
     "id": "nl.bevlogenheid.countdown.dev",
     "name": {
-        "en": "CountDown-DEV"
+        "en": "CountDown"
     },
     "version": "0.0.3",
     "compatibility": ">=0.8.30",
