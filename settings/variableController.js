@@ -67,7 +67,7 @@
         };
 
     vm.saveVariable = function (idx) {
-        vm.selected.lastChanged = getShortDate();
+        // vm.selected.lastChanged = getShortDate();
         vm.variables[idx] = angular.copy(vm.selected);
         vm.displayedVariables = vm.variables;
         storeVariable(angular.copy(vm.variables), vm.selected);

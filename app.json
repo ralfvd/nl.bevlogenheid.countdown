@@ -1,9 +1,9 @@
 {
-    "id": "nl.bevlogenheid.countdown",
+    "id": "nl.bevlogenheid.countdown.dev",
     "name": {
-        "en": "CountDown"
+        "en": "CountDown-DEV"
     },
-    "version": "0.0.2",
+    "version": "0.0.3",
     "compatibility": ">=0.8.30",
     "description" : {
 	"en" : "Use CountDown timers to initiate your flows",

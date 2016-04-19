@@ -36,8 +36,8 @@ var self = {
                 callback(null, false); // true to make the flow continue, or false to abort
          }
         });
-
-	setInterval(timers_update.bind(this),1*1000);
+	var currentVariables= variableManager.getVariables();
+	setInterval(timers_update,1000);
 	function timers_update() {
 		var currentVariables= variableManager.getVariables();
 		//Homey.log(currentVariables);
@@ -50,17 +50,12 @@ var self = {
 				var tokens = { 'variable' : obj.name };
 				var state = { 'variable' : obj.name };
 				Homey.manager('flow').trigger('countdown_to_zero', tokens, state);
-				Homey.log('after trigger');
-				variableManager.updateVariable(obj.name,'-1','number');
+				variableManager.updateVariable(obj.name,'-1','number','');
 			}
 			if (obj.value > 0) {
-				variableManager.updateVariable(obj.name, obj.value - 1, 'number');
+				variableManager.updateVariable(obj.name, obj.value - 1, 'number','');
 			}
 		});
-		//var variable = variableManager.getVariable('testCD');
-		//if(variable){
-		//variableManager.updateVariable('testCD', variable.value - 1, 'number');
-		//};
 	};
   }
 }

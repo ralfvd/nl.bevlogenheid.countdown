@@ -44,11 +44,13 @@ The CountDown timer is heavily influenced and inspired by the BetterLogic app. h
 
 ### Known bugs
 
+- Memory leak can cause the app to crash if running many timers for a period of time
+    - This happens only in extreme cases, in normal day to day use of CountDown timers you will probably not encounter this, but please provide feedback if you do. 
 - Settings screen doesn't always update if a countdown timer updates
     - Workaround: Click 'CountDown' again in left-bar, after this, page will update when a timer is running
 
 ### Changelog
 
+- V0.0.3 2016-04-18 : Optimized memory & cpu usage: the memory leak is largely eliminated, only occurs in extreme cases
 - V0.0.2 2016-04-16 : Optimized settings screen
-- v0.0.1 2016-04-15 : First public release 
-
+- V0.0.1 2016-04-15 : First public release 
