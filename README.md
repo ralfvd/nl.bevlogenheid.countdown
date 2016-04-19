@@ -51,6 +51,6 @@ The CountDown timer is heavily influenced and inspired by the BetterLogic app. h
 
 ### Changelog
 
-- V0.0.3 2016-04-18 : Optimized memory & cpu usage: the memory leak is largely eliminated, only occurs in extreme cases
+- V0.0.4 2016-04-18 : Optimized memory & cpu usage: the memory leak is largely eliminated, only occurs in extreme cases
 - V0.0.2 2016-04-16 : Optimized settings screen
 - V0.0.1 2016-04-15 : First public release 
