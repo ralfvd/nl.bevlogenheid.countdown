@@ -13,7 +13,7 @@ var flowActions = require('./lib/flow/actions.js');
 
 var self = {
   init: function() {
-	Homey.log("CountDown started");
+	//Homey.log("CountDown started");
 	variableManager.init();
 
 	autoCompleteActions.createAutocompleteActions();
@@ -25,11 +25,11 @@ var self = {
 	//flowTriggers.createTriggers();
 
         Homey.manager('flow').on('trigger.countdown_to_zero', function (callback,args,state) {
-        Homey.log('----Flow: countdown_to_zero--'); 
-        Homey.log(args.variable.name);
-        Homey.log(state.variable);
+        //Homey.log('----Flow: countdown_to_zero--'); 
+        //Homey.log(args.variable.name);
+        //Homey.log(state.variable);
         if ( args.variable.name == state.variable ) {
-		Homey.log("Trigger activated");
+		//Homey.log("Trigger activated");
                 callback(null,true);
                 return;
            } else { 
@@ -45,7 +45,7 @@ var self = {
 		 	//Homey.log(obj.name);
 			//Homey.log(obj.value);
 			if (obj.value == 0) {
-				Homey.log("Value triggered: ",obj.value);
+				//Homey.log("Value triggered: ",obj.value);
 				// Homey.manager('flow').trigger('countdown_test');
 				var tokens = { 'variable' : obj.name };
 				var state = { 'variable' : obj.name };
