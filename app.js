@@ -4,11 +4,11 @@ var variableManager = require('./lib/variablemanagement/variablemanagement.js');
 var util = require('./lib/util/util.js');
 
 var autoCompleteActions = require('./lib/autocomplete/actions.js');
-//var autoCompleteConditions = require('./lib/autocomplete/conditions.js');
+var autoCompleteConditions = require('./lib/autocomplete/conditions.js');
 var autoCompleteTriggers = require('./lib/autocomplete/triggers.js');
 
 var flowActions = require('./lib/flow/actions.js');
-//var flowConditions = require('./lib/flow/conditions.js');
+var flowConditions = require('./lib/flow/conditions.js');
 //var flowTriggers = require('./lib/flow/triggers.js');
 
 var self = {
@@ -17,11 +17,11 @@ var self = {
 	variableManager.init();
 
 	autoCompleteActions.createAutocompleteActions();
-        //autoCompleteConditions.createAutocompleteConditions();
-        autoCompleteTriggers.createAutocompleteTriggers();
+    autoCompleteConditions.createAutocompleteConditions();
+    autoCompleteTriggers.createAutocompleteTriggers();
 	
 	flowActions.createActions();
-	//flowConditions.createConditions();
+	flowConditions.createConditions();
 	//flowTriggers.createTriggers();
 
         Homey.manager('flow').on('trigger.countdown_to_zero', function (callback,args,state) {
