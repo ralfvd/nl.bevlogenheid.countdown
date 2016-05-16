@@ -49,6 +49,23 @@
        }
        ],
        "conditions": [
+      {
+        "id": "variable_less_than",
+        "title": {
+          "en": "timer !{{not|}} running",
+          "nl": "Zandloper loopt !{{niet|}}"
+        },
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "name", 
+			  "nl": "naam"
+            }
+          }
+        ]
+      }	   
        ],
        "actions": [
        {
@@ -63,7 +80,8 @@
             "name": "variable",
             "type": "autocomplete",
             "placeholder": {
-              "en": "name"
+              "en": "name", 
+			  "nl": "naam"
             }
           },
           {
@@ -91,7 +109,7 @@
             "placeholder": 
               {
               "en": "name",
-	      "nl": "naam"
+			  "nl": "naam"
               }
            }
          ]
