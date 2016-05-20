@@ -7,25 +7,25 @@
     
         vm.setHomey = function(homey, scope) {
             vm.homey = homey;
-            vm.homey.get('variables', function(err, newVariables) {
-                console.log(newVariables);
-                if (!newVariables) {
-                    newVariables = [];
+            vm.homey.get('variables', function(err, newvariables) {
+                console.log(newvariables);
+                if (!newvariables) {
+                    newvariables = [];
                 }
                 scope.$apply(function() {
-                    vm.variables = newVariables;
-                    vm.displayedVariables = newVariables;
+                    vm.variables = newvariables;
+                    vm.displayedvariables = newvariables;
                 });
             });
             vm.homey.on('setting_changed', function(name) {
-                vm.homey.get('variables', function(err, newVariables) {
-                    console.log(newVariables);
-                    if (!newVariables) {
-                        newVariables = [];
+                vm.homey.get('variables', function(err, newvariables) {
+                    console.log(newvariables);
+                    if (!newvariables) {
+                        newvariables = [];
                     }
                     $scope.$apply(function() {
-                        vm.variables = newVariables;
-                        vm.displayedVariables = newVariables;
+                        vm.variables = newvariables;
+                        vm.displayedvariables = newvariables;
                     });
 
                     console.log(vm.variables);
@@ -53,7 +53,7 @@
         vm.deleteAll = function() {
             vm.homey.set('variables',[] );
             vm.variables = [];
-            vm.displayedVariables = [];
+            vm.displayedvariables = [];
         }
         vm.removeVariable = function (index) {
             var toDeleteVariable = vm.variables[index];
@@ -69,7 +69,7 @@
     vm.saveVariable = function (idx) {
         // vm.selected.lastChanged = getShortDate();
         vm.variables[idx] = angular.copy(vm.selected);
-        vm.displayedVariables = vm.variables;
+        vm.displayedvariables = vm.variables;
         storeVariable(angular.copy(vm.variables), vm.selected);
 
         vm.reset();
@@ -102,7 +102,7 @@
                 variable: variable
             };
 
-            vm.homey.set('changedVariables', changeObject);
+            vm.homey.set('changedvariables', changeObject);
         }
     });
 

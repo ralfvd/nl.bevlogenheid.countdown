@@ -3,10 +3,10 @@
     "name": {
         "en": "CountDown"
     },
-    "version": "0.0.5",
+    "version": "0.1.0",
     "compatibility": ">=0.8.30",
     "description" : {
-	"en" : "Use CountDown timers to initiate your flows",
+	"en" : "Use CountDown timers to control your flows",
         "nl" : "Gebruik CountDown timers als zandloper om af te tellen naar een actie in een flow"
     },
     "author": {
@@ -49,6 +49,23 @@
        }
        ],
        "conditions": [
+        {
+        "id": "timer_running",
+        "title": {
+          "en": "Timer !{{not|}} running",
+          "nl": "Zandloper loopt !{{niet|}}"
+        },
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "name", 
+         	  "nl": "naam"
+           }
+          }
+        ]
+      }	   
        ],
        "actions": [
        {
@@ -63,7 +80,8 @@
             "name": "variable",
             "type": "autocomplete",
             "placeholder": {
-              "en": "name"
+              "en": "name",
+	      "nl": "naam"
             }
           },
           {

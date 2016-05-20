@@ -27,7 +27,9 @@ There are 2 actions:
 
 *Conditions*
 
-No condition cards
+There is one condition card:
+
+- Timer is (not) running: check whether a timer is running (or not)
 
 ### Speech
 
@@ -37,6 +39,8 @@ No speech support
 
 The CountDown timer is heavily influenced and inspired by the BetterLogic app. https://apps.athom.com/app/net.i-dev.betterlogic
 
+The Condition card was suggested (and code provided) by GeurtDijker
+
 ### ToDo
 
 - Clean-up code
@@ -44,12 +48,14 @@ The CountDown timer is heavily influenced and inspired by the BetterLogic app. h
 
 ### Known bugs
 
+- (solved in 0.0.3) Memory leak could cause the app to crash if running many timers for a period of time
 - Settings screen doesn't always update if a countdown timer updates
     - Workaround: Click 'CountDown' again in left-bar, after this, page will update when a timer is running
 
 ### Changelog
 
-- V0.0.5 2016-04-20 : Intermediate version, solves memory leak
-- V0.0.4 2016-04-18 : Optimized memory & cpu usage: the memory leak is largely eliminated, only occurs in extreme cases
+- V0.1.0 2016-05-20 : Added condition card, fixed app for 0.8.35 compatability
+- V0.0.3 2016-04-18 : Optimized memory & cpu usage: the memory leak shouldn't be occuring anymore 
 - V0.0.2 2016-04-16 : Optimized settings screen
 - V0.0.1 2016-04-15 : First public release 
+
