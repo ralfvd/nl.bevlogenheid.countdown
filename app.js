@@ -17,8 +17,13 @@ var self = {
 	variableManager.init();
 
 	autoCompleteActions.createAutocompleteActions();
+<<<<<<< HEAD
         autoCompleteConditions.createAutocompleteConditions();
         autoCompleteTriggers.createAutocompleteTriggers();
+=======
+    autoCompleteConditions.createAutocompleteConditions();
+    autoCompleteTriggers.createAutocompleteTriggers();
+>>>>>>> refs/remotes/origin/master
 	
 	flowActions.createActions();
 	flowConditions.createConditions();

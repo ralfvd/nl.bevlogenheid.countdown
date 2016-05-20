@@ -49,10 +49,17 @@
        }
        ],
        "conditions": [
+<<<<<<< HEAD
         {
         "id": "timer_running",
         "title": {
           "en": "Timer !{{not|}} running",
+=======
+      {
+        "id": "variable_less_than",
+        "title": {
+          "en": "timer !{{not|}} running",
+>>>>>>> refs/remotes/origin/master
           "nl": "Zandloper loopt !{{niet|}}"
         },
         "args": [
@@ -61,8 +68,13 @@
             "type": "autocomplete",
             "placeholder": {
               "en": "name", 
+<<<<<<< HEAD
          	  "nl": "naam"
            }
+=======
+			  "nl": "naam"
+            }
+>>>>>>> refs/remotes/origin/master
           }
         ]
       }	   
@@ -80,8 +92,13 @@
             "name": "variable",
             "type": "autocomplete",
             "placeholder": {
+<<<<<<< HEAD
               "en": "name",
 	      "nl": "naam"
+=======
+              "en": "name", 
+			  "nl": "naam"
+>>>>>>> refs/remotes/origin/master
             }
           },
           {
@@ -109,7 +126,7 @@
             "placeholder": 
               {
               "en": "name",
-	      "nl": "naam"
+			  "nl": "naam"
               }
            }
          ]
