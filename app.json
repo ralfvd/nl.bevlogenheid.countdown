@@ -3,7 +3,7 @@
     "name": {
         "en": "CountDown"
     },
-    "version": "0.1.0",
+    "version": "0.2.0",
     "compatibility": ">=0.8.30",
     "description" : {
 	"en" : "Use CountDown timers to control your flows",
@@ -25,7 +25,7 @@
 	"id": "countdown_to_zero",
 	"title": {
 	   "en": "Timer reaches zero (0)",
-	   "nl": "Zandloper leeg" 
+	   "nl": "Zandloper leeg"
 	},
 	"token": [
           {
@@ -35,7 +35,7 @@
 		 "nl": "Naam zandloper"
               }
           }
-        ], 
+        ],
        "args": [
           {
             "name": "variable",
@@ -60,12 +60,12 @@
             "name": "variable",
             "type": "autocomplete",
             "placeholder": {
-              "en": "name", 
+              "en": "name",
          	  "nl": "naam"
            }
           }
         ]
-      }	   
+      }
        ],
        "actions": [
        {
@@ -74,7 +74,7 @@
 	   "en": "Start countdown timer",
            "nl": "Draai zandloper om"
         },
-         "args": 
+         "args":
          [
           {
             "name": "variable",
@@ -87,7 +87,7 @@
           {
             "name": "value",
             "type": "text",
-            "placeholder": 
+            "placeholder":
 	      {
               "en": "seconds",
 	      "nl": "seconden"
@@ -96,17 +96,53 @@
 	  ]
         },
         {
+    "id": "set_random_countdown_timer",
+    "title": {
+      "en": "start random CountDown",
+      "nl": "Zandloper met willekeurige eindtijd"
+      },
+          "args":
+          [
+           {
+             "name": "variable",
+             "type": "autocomplete",
+             "placeholder": {
+               "en": "name",
+               "nl": "naam"
+             }
+           },
+           {
+             "name": "valuemin",
+             "type": "text",
+             "placeholder":
+         {
+               "en": "min. seconds",
+               "nl": "min. seconden"
+             }
+           },
+           {
+             "name": "valuemax",
+             "type": "text",
+             "placeholder":
+         {
+               "en": "max. seconds",
+               "nl": "max. seconden"
+             }
+           }
+      ]
+         },
+        {
 	 "id": "stop_countdown_timer",
-        "title": 
+        "title":
           {
            "en": "Stop countdown timer"
           },
-         "args": 
+         "args":
          [
            {
             "name": "variable",
             "type": "autocomplete",
-            "placeholder": 
+            "placeholder":
               {
               "en": "name",
 	      "nl": "naam"
@@ -114,6 +150,6 @@
            }
          ]
         }
-        ] 
+        ]
    }
 }
