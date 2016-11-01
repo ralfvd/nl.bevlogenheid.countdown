@@ -3,7 +3,7 @@
     "name": {
         "en": "CountDown"
     },
-    "version": "0.2.0",
+    "version": "1.0.0",
     "compatibility": ">=0.8.30",
     "description" : {
 	"en" : "Use CountDown timers to control your flows",
@@ -22,17 +22,17 @@
   "flow": {
     "triggers": [
        {
-	"id": "countdown_to_zero",
-	"title": {
-	   "en": "Timer reaches zero (0)",
-	   "nl": "Zandloper leeg"
-	},
-	"token": [
+	        "id": "countdown_to_zero",
+	        "title": {
+	           "en": "Timer reaches zero (0)",
+	          "nl": "Zandloper leeg"
+	    },
+	     "token": [
           {
 	      "name": "variable",
 	      "title": {
                  "en": "Name timer",
-		 "nl": "Naam zandloper"
+		              "nl": "Naam zandloper"
               }
           }
         ],
@@ -42,11 +42,63 @@
             "type": "autocomplete",
             "placeholder": {
               "en": "Countdown timer name",
-	      "nl": "Zandloper naam"
+	            "nl": "Zandloper naam"
             }
           }
          ]
-       }
+       },
+       {
+          "id": "countdown_started",
+          "title": {
+	           "en": "Timer has started",
+	          "nl": "Zandloper is gestart"
+	         },
+	        "token": [
+            {
+	             "name": "variable",
+	              "title": {
+                  "en": "Name timer",
+		              "nl": "Naam zandloper"
+              }
+            }
+          ],
+          "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Countdown timer name",
+	            "nl": "Zandloper naam"
+            }
+          }
+        ]
+      },
+      {
+         "id": "countdown_stopped",
+         "title": {
+            "en": "Timer has stopped",
+           "nl": "Zandloper is gestopped"
+          },
+         "token": [
+           {
+              "name": "variable",
+               "title": {
+                 "en": "Name timer",
+                 "nl": "Naam zandloper"
+             }
+           }
+         ],
+         "args": [
+         {
+           "name": "variable",
+           "type": "autocomplete",
+           "placeholder": {
+             "en": "Countdown timer name",
+             "nl": "Zandloper naam"
+           }
+         }
+       ]
+     }
        ],
        "conditions": [
         {
@@ -69,38 +121,38 @@
        ],
        "actions": [
        {
-	"id": "set_countdown_timer",
-	"title": {
-	   "en": "Start countdown timer",
-           "nl": "Draai zandloper om"
-        },
-         "args":
-         [
-          {
-            "name": "variable",
-            "type": "autocomplete",
-            "placeholder": {
-              "en": "name",
-	      "nl": "naam"
-            }
-          },
-          {
-            "name": "value",
-            "type": "text",
-            "placeholder":
-	      {
-              "en": "seconds",
-	      "nl": "seconden"
-            }
-          }
-	  ]
-        },
-        {
-    "id": "set_random_countdown_timer",
-    "title": {
-      "en": "start random CountDown",
-      "nl": "Zandloper met willekeurige eindtijd"
+	        "id": "set_countdown_timer",
+	        "title": {
+	           "en": "Start countdown timer",
+             "nl": "Draai zandloper om"
+           },
+           "args":
+           [
+             {
+               "name": "variable",
+               "type": "autocomplete",
+               "placeholder": {
+                 "en": "name",
+	               "nl": "naam"
+               }
+             },
+             {
+               "name": "value",
+               "type": "text",
+               "placeholder":
+	             {
+                 "en": "seconds",
+	              "nl": "seconden"
+               }
+             }
+	        ]
       },
+      {
+        "id": "set_random_countdown_timer",
+        "title": {
+          "en": "start random CountDown",
+          "nl": "Zandloper met willekeurige eindtijd"
+        },
           "args":
           [
            {

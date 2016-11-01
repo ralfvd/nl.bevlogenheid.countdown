@@ -1,15 +1,15 @@
-﻿angular.module('CountDownApp', ['smart-table'])
-    .controller('VariableSettingsController', function($scope) {
+angular.module('CountDownApp', ['smart-table'])
+  .controller('VariableSettingsController', function($scope) {
         var vm = this;
         vm.errorMessage = '';
         vm.selected = {};
         vm.homey;
-    
         vm.setHomey = function(homey, scope) {
             vm.homey = homey;
             vm.homey.get('variables', function(err, newvariables) {
                 console.log(newvariables);
                 if (!newvariables) {
+                    // No variables found in settings
                     newvariables = [];
                 }
                 scope.$apply(function() {

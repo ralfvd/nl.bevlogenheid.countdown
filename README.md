@@ -16,7 +16,10 @@ If you see a value '-1', this means the countdown timer is not active and waitin
 
 *Triggers*
 
-There is 1 trigger: when a CountDown timer reaches 0.
+There is 3 trigger
+	- When a CountDown timer reaches 0. This will be the most used trigger.
+	- When a CountDown timer has started
+	- When a CountDown timer has stopped before reaching 0.
 
 *Actions*
 
@@ -41,6 +44,7 @@ No speech support
 The CountDown timer is heavily influenced and inspired by the BetterLogic app. https://apps.athom.com/app/net.i-dev.betterlogic
 
 The Condition card was suggested (and code provided) by GeurtDijker
+The Start/Stop triggers cards were suggested by MarkSwift
 
 ### Donate
 
@@ -54,12 +58,12 @@ If you like the app, consider a donation to support development
 
 ### Known bugs
 
-- (solved in 0.0.3) Memory leak could cause the app to crash if running many timers for a period of time
 - Settings screen doesn't always update if a countdown timer updates
     - Workaround: Click 'CountDown' again in left-bar, after this, page will update when a timer is running
 
 ### Changelog
 
+- V1.0.0 2016-11-01 : Added start/stop Countdown trigger cards
 - V0.2.0 2016-07-20 : Added random CountDown action card
 - V0.1.0 2016-05-20 : Added condition card, fixed app for 0.8.35 compatability
 - V0.0.3 2016-04-18 : Optimized memory & cpu usage: the memory leak shouldn't be occuring anymore
