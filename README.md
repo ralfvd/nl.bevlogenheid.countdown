@@ -44,6 +44,7 @@ No speech support
 The CountDown timer is heavily influenced and inspired by the BetterLogic app. https://apps.athom.com/app/net.i-dev.betterlogic
 
 The Condition card was suggested (and code provided) by GeurtDijker
+
 The Start/Stop triggers cards were suggested by MarkSwift
 
 ### Donate
