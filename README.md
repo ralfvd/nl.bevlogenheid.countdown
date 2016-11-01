@@ -47,6 +47,8 @@ The Condition card was suggested (and code provided) by GeurtDijker
 
 The Start/Stop triggers cards were suggested by MarkSwift
 
+Import / Export code by Patrick Sannes ( Better Logic app )
+
 ### Donate
 
 If you like the app, consider a donation to support development  
@@ -64,7 +66,7 @@ If you like the app, consider a donation to support development
 
 ### Changelog
 
-- V1.0.0 2016-11-01 : Added start/stop Countdown trigger cards
+- V1.0.0 2016-11-01 : Added start/stop Countdown trigger cards, implemented export/import
 - V0.2.0 2016-07-20 : Added random CountDown action card
 - V0.1.0 2016-05-20 : Added condition card, fixed app for 0.8.35 compatability
 - V0.0.3 2016-04-18 : Optimized memory & cpu usage: the memory leak shouldn't be occuring anymore
