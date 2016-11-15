@@ -3,11 +3,11 @@
     "name": {
         "en": "CountDown"
     },
-    "version": "1.0.0",
+    "version": "1.0.1",
     "compatibility": ">=0.8.30",
     "description" : {
-	"en" : "Use CountDown timers to control your flows",
-        "nl" : "Gebruik CountDown timers als zandloper om af te tellen naar een actie in een flow"
+	    "en" : "Use CountDown timers to control your flows",
+      "nl" : "Gebruik CountDown timers als zandloper om af te tellen naar een actie in een flow"
     },
     "author": {
         "name": "Ralf van Dooren",
@@ -98,7 +98,40 @@
            }
          }
        ]
-     }
+     },
+     {
+        "id": "countdown_timer_changed",
+        "title": {
+           "en": "Timer value has changed",
+          "nl": "Zandloper waarde is veranderd"
+         },
+        "token": [
+          {
+             "name": "variable",
+              "title": {
+                "en": "Name timer",
+                "nl": "Naam zandloper"
+            }
+          },
+          {
+            "name": "value",
+            "title": {
+              "en": "value",
+              "nl": "waarde"
+            }
+          }
+        ],
+        "args": [
+        {
+          "name": "variable",
+          "type": "autocomplete",
+          "placeholder": {
+            "en": "Countdown timer name",
+            "nl": "Zandloper naam"
+          }
+        }
+      ]
+    }
        ],
        "conditions": [
         {
@@ -117,7 +150,33 @@
            }
           }
         ]
+      },
+      {
+        "id": "timer_matches_number",
+        "title": {
+          "en": "!{{CountDown is exact|Countdown is not exactly}}",
+          "nl": "!{{Zandloper is precies|Zandloper is ongelijk aan}}"
+        },
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "CountDown name",
+              "nl": "Zandloper naam"
+            }
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "placeholder": {
+              "en": "value",
+              "nl": "waarde"
+            }
+          }
+        ]
       }
+
        ],
        "actions": [
        {

@@ -16,10 +16,11 @@ If you see a value '-1', this means the countdown timer is not active and waitin
 
 *Triggers*
 
-There is 3 trigger
+There are 4 triggers
 	- When a CountDown timer reaches 0. This will be the most used trigger.
 	- When a CountDown timer has started
 	- When a CountDown timer has stopped before reaching 0.
+	- When a CountDown timer has changed its value
 
 *Actions*
 
@@ -31,9 +32,10 @@ There are 3 actions:
 
 *Conditions*
 
-There is one condition card:
+There are 2 condition cards:
 
 - Timer is (not) running: check whether a timer is running (or not)
+- Timer is (not) exactly value: to be used in combination with the 'value changed' trigger card. You can use this to check if a CountDown timer has reached a certain value.
 
 ### Speech
 
@@ -48,6 +50,8 @@ The Condition card was suggested (and code provided) by GeurtDijker
 The Start/Stop triggers cards were suggested by MarkSwift
 
 Import / Export code by Patrick Sannes ( Better Logic app )
+
+The trigger/condition combination for checking a value was suggested by YvesGeffens
 
 ### Donate
 
@@ -66,6 +70,7 @@ If you like the app, consider a donation to support development
 
 ### Changelog
 
+- V1.0.1 2016-11-16 : Added trigger/condition combination to check value of a CountDown timer
 - V1.0.0 2016-11-01 : Added start/stop Countdown trigger cards, implemented export/import
 - V0.2.0 2016-07-20 : Added random CountDown action card
 - V0.1.0 2016-05-20 : Added condition card, fixed app for 0.8.35 compatability
