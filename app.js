@@ -71,19 +71,20 @@ var self = {
 	        currentVariables.forEach(function( obj) {
 		 	//Homey.log(obj.name);
 			//Homey.log(obj.value);
-      var tokens = { 'variable' : obj.name };
+      var tokens = { 'variable' : obj.name, 'value' : obj.value };
       var state = { 'variable' : obj.name };
-      Homey.manager('flow').trigger('countdown_timer_changed', tokens, state);
-			if (obj.value == 0) {
+      if (obj.value == 0) {
 				//Homey.log("Value triggered: ",obj.value);
 				// Homey.manager('flow').trigger('countdown_test');
 				//var tokens = { 'variable' : obj.name };
 				//var state = { 'variable' : obj.name };
 				Homey.manager('flow').trigger('countdown_to_zero', tokens, state);
-				variableManager.updatevariable(obj.name,'-1','number','');
+        Homey.manager('flow').trigger('countdown_timer_changed', tokens, state);
+	  		variableManager.updatevariable(obj.name,'-1','number','');
 			}
 			if (obj.value > 0) {
 				variableManager.updatevariable(obj.name, obj.value - 1, 'number','');
+        Homey.manager('flow').trigger('countdown_timer_changed', tokens, state);
 			}
 		});
 	};
