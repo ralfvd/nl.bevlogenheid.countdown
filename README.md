@@ -70,6 +70,7 @@ If you like the app, consider a donation to support development
 
 ### Changelog
 
+- V1.0.2 2016-12-05 : Fixed bug for tokens in action card when CountDown value changed
 - V1.0.1 2016-11-16 : Added trigger/condition combination to check value of a CountDown timer
 - V1.0.0 2016-11-01 : Added start/stop Countdown trigger cards, implemented export/import
 - V0.2.0 2016-07-20 : Added random CountDown action card

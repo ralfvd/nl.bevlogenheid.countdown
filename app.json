@@ -105,16 +105,17 @@
            "en": "Timer value has changed",
           "nl": "Zandloper waarde is veranderd"
          },
-        "token": [
+        "tokens": [
           {
              "name": "variable",
               "title": {
-                "en": "Name timer",
-                "nl": "Naam zandloper"
+                "en": "name timer",
+                "nl": "naam zandloper"
             }
           },
           {
             "name": "value",
+            "type": "number",
             "title": {
               "en": "value",
               "nl": "waarde"
