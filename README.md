@@ -53,6 +53,8 @@ Import / Export code by Patrick Sannes ( Better Logic app )
 
 The trigger/condition combination for checking a value was suggested by YvesGeffens
 
+Readable format of timer dates in settings menu was provided by jghaanstra
+
 ### Donate
 
 If you like the app, consider a donation to support development  
@@ -70,6 +72,7 @@ If you like the app, consider a donation to support development
 
 ### Changelog
 
+- V1.0.4 2016-12-20 : Human readable format for LastChanged dates in settings menu
 - V1.0.3 2016-12-05 : Fixed bug for tokens in action card when CountDown value changed
 - V1.0.1 2016-11-16 : Added trigger/condition combination to check value of a CountDown timer
 - V1.0.0 2016-11-01 : Added start/stop Countdown trigger cards, implemented export/import

@@ -39,7 +39,7 @@
        </div>
        <div ng-show="vm.showImportToggle">
            <b>Import values:</b><br />
-           Paste in the box below the exported values. Be aware that all existing values and insights will be removed.
+           Paste in the box below the exported values. Be aware that all existing values will be removed.
            <p>
                <textarea rows="6" cols="60" ng-Model="vm.importJson"></textarea>
                <div class="form-group">
@@ -47,7 +47,7 @@
                </div>
            </p>
        </div>
-        <table st-safe-src="vm.variables" st-table="vm.displayedVariables" class="table table-striped">
+        <table st-safe-src="vm.variables" st-table="displayedCollection" class="table table-striped">
             <thead>
                 <tr>
                     <th st-sort="name">Name</th>
@@ -69,7 +69,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="variable in vm.displayedVariables" ng-include="vm.getTemplate(variable)"></tr>
+                <tr ng-repeat="variable in displayedCollection" ng-include="vm.getTemplate(variable)"></tr>
             </tbody>
         </table>
     </div>
@@ -83,7 +83,7 @@
         <td>{{variable.value}}</td>
         <td>
             <button ng-click="vm.editVariable(variable)">Edit</button>
-            <button ng-click="vm.removeVariable($index)">Delete</button>
+            <button ng-click="vm.removeVariable(variable)">Delete</button>
         </td>
     </script>
 
@@ -99,7 +99,7 @@
             </div>
         </td>
         <td>
-            <button ng-click="vm.saveVariable($index)">Save</button>
+            <button ng-click="vm.saveVariable(variable)">Save</button>
             <button ng-click="vm.reset()">Cancel</button>
         </td>
     </script>
