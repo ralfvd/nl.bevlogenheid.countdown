@@ -3,7 +3,7 @@
     "name": {
         "en": "CountDown"
     },
-    "version": "1.0.4",
+    "version": "1.0.5",
     "compatibility": ">=0.8.30",
     "description" : {
 	    "en" : "Use CountDown timers to control your flows",
@@ -77,7 +77,7 @@
          "id": "countdown_stopped",
          "title": {
             "en": "Timer has stopped",
-           "nl": "Zandloper is gestopped"
+           "nl": "Zandloper is gestopt"
           },
          "token": [
            {
@@ -257,11 +257,20 @@
             "placeholder":
               {
               "en": "name",
-	      "nl": "naam"
+	             "nl": "naam"
               }
            }
          ]
-        }
-        ]
+       },
+       {
+       "id": "stop_all_countdown_timers",
+            "title":
+              {
+               "en": "Stop all countdown timers",
+               "nl": "Stop alle zandlopers"
+              }
+
+               }
+      ]
    }
 }

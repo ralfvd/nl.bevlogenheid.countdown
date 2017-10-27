@@ -29,6 +29,7 @@ There are 3 actions:
 - Start CountDown timer: set a value and a number (in seconds)
 - Start random CountDown timer: set a value and a range (inclusive); when action starts, it will randomly selected a number between 'min' and 'max' (including those numbers) and start the CountDown timer.
 - Stop CountDown timer: the CountDown timer will be stopped (and reset)
+- Stop all CountDown timers: All CountDown timers will be stopped (and reset)
 
 *Conditions*
 
@@ -72,6 +73,7 @@ If you like the app, consider a donation to support development
 
 ### Changelog
 
+- V1.0.5 2017-09-27 : Add 'stop all timers' action card
 - V1.0.4 2016-12-20 : Human readable format for LastChanged dates in settings menu
 - V1.0.3 2016-12-05 : Fixed bug for tokens in action card when CountDown value changed
 - V1.0.1 2016-11-16 : Added trigger/condition combination to check value of a CountDown timer
