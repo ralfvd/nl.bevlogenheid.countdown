@@ -3,7 +3,7 @@
     "name": {
         "en": "CountDown"
     },
-    "version": "1.0.5",
+    "version": "1.0.6",
     "compatibility": ">=0.8.30",
     "description" : {
 	    "en" : "Use CountDown timers to control your flows",
@@ -243,6 +243,33 @@
            }
       ]
          },
+         {
+  	        "id": "increase_countdown_timer",
+  	        "title": {
+  	           "en": "Increase countdown timer",
+               "nl": "Voeg seconden toe"
+             },
+             "args":
+             [
+               {
+                 "name": "variable",
+                 "type": "autocomplete",
+                 "placeholder": {
+                   "en": "name",
+  	               "nl": "naam"
+                 }
+               },
+               {
+                 "name": "value",
+                 "type": "text",
+                 "placeholder":
+  	             {
+                   "en": "seconds",
+  	              "nl": "seconden"
+                 }
+               }
+  	        ]
+        },
         {
 	 "id": "stop_countdown_timer",
         "title":
