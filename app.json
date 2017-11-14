@@ -3,7 +3,7 @@
     "name": {
         "en": "CountDown"
     },
-    "version": "1.0.6",
+    "version": "1.0.7",
     "compatibility": ">=0.8.30",
     "description" : {
 	    "en" : "Use CountDown timers to control your flows",
@@ -12,6 +12,13 @@
     "author": {
         "name": "Ralf van Dooren",
         "email": "ralfvd@gmail.com"
+    },
+    "contributing": {
+        "donate": {
+            "paypal": {
+                "username": "ralfvd"
+            }
+        }
     },
 "images": {
     "large": "./assets/images/large.jpg",
@@ -244,10 +251,10 @@
       ]
          },
          {
-  	        "id": "increase_countdown_timer",
+  	        "id": "adjust_countdown_timer",
   	        "title": {
-  	           "en": "Increase countdown timer",
-               "nl": "Voeg seconden toe"
+  	           "en": "Adjust countdown timer",
+               "nl": "Pas zandloper aan"
              },
              "args":
              [
