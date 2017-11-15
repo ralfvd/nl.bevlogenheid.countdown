@@ -74,6 +74,7 @@ If you like the app, consider a donation to support development
 
 ### Changelog
 
+- V0.1.8 2017-11-15 : Bugfix 
 - V1.0.7 2017-11-14 : Add global tags support
 - V1.0.6 2017-10-27 : Add 'adjust timer' action card
 - V1.0.5 2017-10-27 : Add 'stop all timers' action card
