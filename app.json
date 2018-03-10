@@ -4,7 +4,7 @@
     "en": "CountDown"
   },
   "version": "1.2.0",
-  "compatibility": ">=0.8.30",
+  "compatibility": ">=1.0.3",
   "description": {
     "en": "Use CountDown timers to control your flows",
     "nl": "Gebruik CountDown timers als zandloper om af te tellen naar een actie in een flow"
@@ -190,7 +190,7 @@
         "id": "timer_less_than_number",
         "title": {
           "en": "!{{CountDown is less than|Countdown is not less than}}",
-          "nl": "!{{CountDown is less than|Countdown is not less than}}"
+          "nl": "!{{Zandloper is kleiner dan|Zandloper is niet kleiner dan}}"
         },
         "args": [
           {
@@ -215,7 +215,7 @@
         "id": "timer_greater_than_number",
         "title": {
           "en": "!{{CountDown is greater than|Countdown is not greater than}}",
-          "nl": "!{{CountDown is greater than|Countdown is not greater than}}"
+          "nl": "!{{Zandloper is groter dan|Zandloper is niet groter dan}}"
         },
         "args": [
           {

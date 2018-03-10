@@ -11,6 +11,7 @@ var autoCompleteTriggers = require('./lib/autocomplete/triggers.js');
 var flowActions = require('./lib/flow/actions.js');
 var flowConditions = require('./lib/flow/conditions.js');
 //var flowTriggers = require('./lib/flow/triggers.js');
+const Log = require('homey-log').Log;
 
 var self = {
   init: function() {
@@ -64,6 +65,7 @@ var self = {
 
 	var currentVariables= variableManager.getvariables();
   Homey.log(currentVariables.length);
+  Log.captureMessage("Countdown app started with variables:" + currentVariables.length);
 	setInterval(timers_update,1000);
 	function timers_update() {
 		var currentVariables= variableManager.getvariables();

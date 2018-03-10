@@ -74,6 +74,7 @@ If you like the app, consider a donation to support development
 
 ### Changelog
 
+- V1.2.0 2018-03-10 : Added greater than/less than conditions, added Sentry logging
 - V1.1.2 2017-11-27 : Fix the bugfix of adjust timer
 - V1.1.1 2017-11-16 : Bugfix autocomplete adjust timer
 - V1.1.0 2017-11-15 : Bugfix global tags
