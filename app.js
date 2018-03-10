@@ -12,6 +12,7 @@ var flowActions = require('./lib/flow/actions.js');
 var flowConditions = require('./lib/flow/conditions.js');
 //var flowTriggers = require('./lib/flow/triggers.js');
 const Log = require('homey-log').Log;
+const severity = util.severity;
 
 var self = {
   init: function() {
@@ -65,6 +66,15 @@ var self = {
 
 	var currentVariables= variableManager.getvariables();
   Homey.log(currentVariables.length);
+  var uniqueUserId = Homey.manager('settings').get('uniqueUserId');
+  Homey.log(uniqueUserId);
+        if (!util.value_exist(uniqueUserId)) {
+            uniqueUserId = util.generateUniqueId();
+            Homey.manager('settings').set('uniqueUserId', uniqueUserId);
+            util.cdLog('Generating new unique user ID: ' + uniqueUserId, severity.debug);
+        }
+        util.cdLog('Unique user ID: ' + JSON.stringify(uniqueUserId), severity.debug);
+        Log.setUser(uniqueUserId);
   Log.captureMessage("Countdown app started with variables:" + currentVariables.length);
 	setInterval(timers_update,1000);
 	function timers_update() {
@@ -82,7 +92,7 @@ var self = {
 				//var state = { 'variable' : obj.name };
 				Homey.manager('flow').trigger('countdown_to_zero', tokens, state);
         Homey.manager('flow').trigger('countdown_timer_changed', tokens, state);
-	  		variableManager.updatevariable(obj.name,'-1','number','');
+	  		variableManager.updatevariable(obj.name,-1,'number','');
 			}
 			if (obj.value > 0) {
 				variableManager.updatevariable(obj.name, obj.value - 1, 'number','');
