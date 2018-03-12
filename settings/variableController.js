@@ -4,13 +4,14 @@ angular.module('CountDownApp', ['smart-table'])
         vm.errorMessage = '';
         vm.showExportToggle = false;
         vm.showImportToggle = false;
+        vm.locktable = false;
         vm.importJson = '';
         vm.selected = {};
         vm.homey;
         vm.setHomey = function(homey, scope) {
             vm.homey = homey;
             vm.homey.get('variables', function(err, newvariables) {
-                console.log(newvariables);
+                //console.log(newvariables);
                 if (!newvariables) {
                     // No variables found in settings
                     newvariables = [];
@@ -21,15 +22,16 @@ angular.module('CountDownApp', ['smart-table'])
             });
             vm.homey.on('setting_changed', function(name) {
                 vm.homey.get('variables', function(err, newvariables) {
-                    console.log(newvariables);
+                    //console.log(newvariables);
                     if (!newvariables) {
                         newvariables = [];
                     }
-                    $scope.$apply(function() {
-                        vm.variables = newvariables;
-                    });
-
-                    console.log(vm.variables);
+                    if ( vm.locktable == false ) {
+                        $scope.$apply(function() {
+                          vm.variables = newvariables;
+                         });
+                    }
+                    //console.log(vm.variables);
                 });
             });
         }
@@ -78,6 +80,7 @@ angular.module('CountDownApp', ['smart-table'])
             };
 
         vm.editVariable = function(variable) {
+            vm.locktable = true;
             vm.selected = angular.copy(variable);
         };
 
@@ -88,17 +91,16 @@ angular.module('CountDownApp', ['smart-table'])
         vm.variables[index] = angular.copy(vm.selected);
         $scope.displayedCollection[indexDisplay] = angular.copy(vm.selected);
         storeVariable(angular.copy(vm.variables), vm.selected);
+        vm.locktable=false;
         vm.reset();
         };
+
         vm.reset = function() {
             vm.selected = {};
+            vm.locktable=false;
         };
 
         vm.selectUpdate = function(type) {
-            if (type === 'boolean') {
-                vm.newVariable.value = false;
-                return;
-            }
             if (type === 'number') {
                 vm.newVariable.value = 0;
                 return;
