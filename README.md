@@ -34,10 +34,11 @@ There are 3 actions:
 
 *Conditions*
 
-There are 2 condition cards:
+There are 4 condition cards:
 
 - Timer is (not) running: check whether a timer is running (or not)
 - Timer is (not) exactly value: to be used in combination with the 'value changed' trigger card. You can use this to check if a CountDown timer has reached a certain value.
+- Timer is less/greater than: check if a CountDown timer has a value less/greater than a specified value
 
 ### Speech
 
@@ -57,6 +58,8 @@ The trigger/condition combination for checking a value was suggested by YvesGeff
 
 Readable format of timer dates in settings menu was provided by jghaanstra
 
+Greater than/less than conditions was coded by Petter Alstermark
+
 ### Donate
 
 If you like the app, consider a donation to support development  
@@ -74,7 +77,7 @@ If you like the app, consider a donation to support development
 
 ### Changelog
 
-- V1.2.0 2018-03-10 : Added greater than/less than conditions, added Sentry logging
+- V1.2.1 2018-03-12 : Added greater than/less than conditions, added Sentry logging
 - V1.1.2 2017-11-27 : Fix the bugfix of adjust timer
 - V1.1.1 2017-11-16 : Bugfix autocomplete adjust timer
 - V1.1.0 2017-11-15 : Bugfix global tags

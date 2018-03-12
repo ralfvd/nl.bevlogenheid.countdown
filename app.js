@@ -74,8 +74,13 @@ var self = {
             util.cdLog('Generating new unique user ID: ' + uniqueUserId, severity.debug);
         }
         util.cdLog('Unique user ID: ' + JSON.stringify(uniqueUserId), severity.debug);
-        Log.setUser(uniqueUserId);
-  Log.captureMessage("Countdown app started with variables:" + currentVariables.length);
+        Log.setUser({
+          id: uniqueUserId
+        });
+        Log.setTags({
+          timers: currentVariables.length
+        })
+  Log.captureMessage("Countdown app started with variables:" + currentVariables.length, { level: 'info'});
 	setInterval(timers_update,1000);
 	function timers_update() {
 		var currentVariables= variableManager.getvariables();
