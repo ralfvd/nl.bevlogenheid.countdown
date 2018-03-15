@@ -81,6 +81,22 @@ var self = {
           timers: currentVariables.length
         })
   Log.captureMessage("Countdown app started with variables:" + currentVariables.length, { level: 'info'});
+  
+// Log mem+cpu warnings to Sentry
+  Homey.on('memwarn', function( data ){
+    console.log('memory above 100mb')
+    console.log('count: ' +  data.count + '/30'); // count: 1/30, 2/30 etc. after count 30, your app is killed
+    util.cdLog('Memory warning: ' + JSON.stringify(currentVariables), severity.error)
+
+});
+
+  Homey.on('cpuwarn', function( data ){
+  console.log('cpu above 80%')
+  console.log('count: ' +  data.count + '/30'); // count: 1/30, 2/30 etc. after count 30, your app is killed
+  util.cdLog('CPU warning: ' + JSON.stringify(currentVariables), severity.error)
+
+  });
+
 	setInterval(timers_update,1000);
 	function timers_update() {
 		var currentVariables= variableManager.getvariables();

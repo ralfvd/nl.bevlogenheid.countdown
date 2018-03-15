@@ -77,7 +77,7 @@ If you like the app, consider a donation to support development
 
 ### Changelog
 
-- V1.2.2 2018-03-14 : Fixed GitHub issue #9 ; losing focus when editing numbers
+- V1.2.2 2018-03-14 : Fixed GitHub issue #9 ; improved input validation
 - V1.2.1 2018-03-12 : Added greater than/less than conditions, added Sentry logging
 - V1.1.2 2017-11-27 : Fix the bugfix of adjust timer
 - V1.1.1 2017-11-16 : Bugfix autocomplete adjust timer
