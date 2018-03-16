@@ -77,6 +77,7 @@ If you like the app, consider a donation to support development
 
 ### Changelog
 
+- V1.2.3 2018-03-16 : Bugfix when upgrading from < 1.2 
 - V1.2.2 2018-03-14 : Fixed GitHub issue #9 ; improved input validation
 - V1.2.1 2018-03-12 : Added greater than/less than conditions, added Sentry logging
 - V1.1.2 2017-11-27 : Fix the bugfix of adjust timer
