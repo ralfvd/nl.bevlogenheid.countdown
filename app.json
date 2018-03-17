@@ -3,7 +3,7 @@
   "name": {
     "en": "CountDown"
   },
-  "version": "1.2.3",
+  "version": "1.2.4",
   "compatibility": ">=1.0.3",
   "description": {
     "en": "Use CountDown timers to control your flows",
@@ -125,7 +125,7 @@
           },
           {
             "name": "value",
-            "type": "number",
+            "type": "text",
             "min": 0,
             "title": {
               "en": "value",
@@ -180,7 +180,7 @@
           },
           {
             "name": "value",
-            "type": "number",
+            "type": "text",
             "min": 0,
             "placeholder": {
               "en": "value",
@@ -206,7 +206,7 @@
           },
           {
             "name": "value",
-            "type": "number",
+            "type": "text",
             "min": 0,
             "placeholder": {
               "en": "value",
@@ -232,7 +232,7 @@
           },
           {
             "name": "value",
-            "type": "number",
+            "type": "text",
             "min": 0,
             "placeholder": {
               "en": "value",
@@ -261,7 +261,7 @@
           },
           {
             "name": "value",
-            "type": "number",
+            "type": "text",
             "min": 0,
             "placeholder": {
               "en": "seconds",
@@ -287,7 +287,7 @@
           },
           {
             "name": "valuemin",
-            "type": "number",
+            "type": "text",
             "min": 0,
             "placeholder": {
               "en": "min. seconds",
@@ -296,7 +296,7 @@
           },
           {
             "name": "valuemax",
-            "type": "number",
+            "type": "text",
             "min": 0,
             "placeholder": {
               "en": "max. seconds",
@@ -322,7 +322,7 @@
           },
           {
             "name": "value",
-            "type": "number",
+            "type": "text",
             "placeholder": {
               "en": "seconds",
               "nl": "seconden"

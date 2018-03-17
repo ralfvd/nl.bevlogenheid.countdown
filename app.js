@@ -80,8 +80,8 @@ var self = {
         Log.setTags({
           timers: currentVariables.length
         })
-  Log.captureMessage("Countdown app started with variables:" + currentVariables.length, { level: 'info'});
-  
+  //Log.captureMessage("Countdown app started with variables:" + currentVariables.length, { level: 'info'});
+
 // Log mem+cpu warnings to Sentry
   Homey.on('memwarn', function( data ){
     console.log('memory above 100mb')
@@ -104,6 +104,8 @@ var self = {
 	        currentVariables.forEach(function( obj) {
 		 	//Homey.log(obj.name);
 			//Homey.log(obj.value);
+      //Homey.log(typeof obj.value);
+      //Homey.log('----');
       var tokens = { 'variable' : obj.name, 'value' : obj.value };
       var state = { 'variable' : obj.name };
       if (obj.value == 0) {
