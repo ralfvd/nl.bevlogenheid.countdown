@@ -20,7 +20,6 @@
       }
     }
   },
-  "athomForumDiscussionId": 1152,
   "images": {
     "large": "./assets/images/large.jpg",
     "small": "./assets/images/small.jpg"
@@ -125,8 +124,7 @@
           },
           {
             "name": "value",
-            "type": "text",
-            "min": 0,
+            "type": "number",
             "title": {
               "en": "value",
               "nl": "waarde"
@@ -180,8 +178,7 @@
           },
           {
             "name": "value",
-            "type": "text",
-            "min": 0,
+            "type": "number",
             "placeholder": {
               "en": "value",
               "nl": "waarde"
@@ -206,8 +203,7 @@
           },
           {
             "name": "value",
-            "type": "text",
-            "min": 0,
+            "type": "number",
             "placeholder": {
               "en": "value",
               "nl": "waarde"
@@ -232,8 +228,7 @@
           },
           {
             "name": "value",
-            "type": "text",
-            "min": 0,
+            "type": "number",
             "placeholder": {
               "en": "value",
               "nl": "waarde"
@@ -262,7 +257,6 @@
           {
             "name": "value",
             "type": "text",
-            "min": 0,
             "placeholder": {
               "en": "seconds",
               "nl": "seconden"
@@ -288,7 +282,6 @@
           {
             "name": "valuemin",
             "type": "text",
-            "min": 0,
             "placeholder": {
               "en": "min. seconds",
               "nl": "min. seconden"
@@ -297,7 +290,6 @@
           {
             "name": "valuemax",
             "type": "text",
-            "min": 0,
             "placeholder": {
               "en": "max. seconds",
               "nl": "max. seconden"
