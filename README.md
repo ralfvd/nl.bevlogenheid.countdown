@@ -77,6 +77,7 @@ If you like the app, consider a donation to support development
 
 ### Changelog
 
+- V1.2.5 2018-03-18 : Bugfix adjust timer
 - V1.2.4 2018-03-17 : Revert part of input validation, bug in action and conditions cards
 - V1.2.3 2018-03-16 : Bugfix when upgrading from < 1.2
 - V1.2.2 2018-03-14 : Fixed GitHub issue #9 ; improved input validation
