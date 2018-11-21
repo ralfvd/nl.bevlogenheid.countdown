@@ -5,14 +5,14 @@
     <script type="text/javascript" src="/manager/webserver/assets/js/angular.js"></script>
     <script type="text/javascript" src="smart-table.min.js"></script>
     <script type="text/javascript" src="variableController.js"></script>
-
+    <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
 
 </head>
 
 <body ng-controller="VariableSettingsController as vm">
     <h2>CountDown timer management</h2>
     <p>Be aware that removing timers could corrupt flows that are using that timer.</p>
-    <div >
+    <div>
         <div class="panel panel-default">
             <div class="panel-heading">Add CountDown timer</div>
             <div class="panel-body">
@@ -123,13 +123,12 @@
         <input class="col-xs-2" id="variableValue" type="checkbox" ng-model="vm.selected.value" placeholder="value">
     </script>
 <script>
-    //var homeboy;
     // Initialize Homey
-    function onHomeyReady() {
+    function onHomeyReady(Homey) {
         Homey.ready();
         var scope = angular.element(document.getElementById('variableName')).scope();
         scope.$apply(function() {
-            scope.vm.setHomey(Homey, scope);
+            scope.vm.init(Homey, scope);
         });
     }
 

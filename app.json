@@ -1,10 +1,11 @@
 {
-  "id": "nl.bevlogenheid.countdown",
+  "id": "nl.bevlogenheid.countdownsdk2",
   "name": {
-    "en": "CountDown"
+    "en": "2 CountDown"
   },
-  "version": "1.2.5",
-  "compatibility": ">=1.0.3",
+  "version": "2.0.0",
+  "compatibility": ">=1.5.0",
+  "sdk": 2,
   "description": {
     "en": "Use CountDown timers to control your flows",
     "nl": "Gebruik CountDown timers als zandloper om af te tellen naar een actie in een flow"
@@ -30,6 +31,21 @@
   "dependencies": {},
   "flow": {
     "triggers": [
+      {
+        "id": "if_variable_set",
+        "title": {
+          "en": "New timer created"
+        },
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Variable name"
+            }
+          }
+        ]
+      },
       {
         "id": "countdown_to_zero",
         "title": {
