@@ -1,5 +1,3 @@
-SDK2
-
 ### Homey CountDown timer
 This is a CountDown timer which you can use to initiate flows.
 
