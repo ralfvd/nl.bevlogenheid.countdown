@@ -21,10 +21,6 @@ class CountDown extends Homey.App {
 	this.log("CountDown started");
 	variableManager.init();
 
-	//autoCompleteActions.createAutocompleteActions();
-  //autoCompleteConditions.createAutocompleteConditions();
-  //autoCompleteTriggers.createAutocompleteTriggers();
-
 	//flowActions.createActions();
 	//flowConditions.createConditions();
 
@@ -80,13 +76,16 @@ class CountDown extends Homey.App {
 				// Homey.manager('flow').trigger('countdown_test');
 				//var tokens = { 'variable' : obj.name };
 				//var state = { 'variable' : obj.name };
-				Homey.manager('flow').trigger('countdown_to_zero', tokens, state);
-        Homey.manager('flow').trigger('countdown_timer_changed', tokens, state);
-	  		variableManager.updateVariable(obj.name,-1,'number','');
+
+        //Homey.manager('flow').trigger('countdown_to_zero', tokens, state);
+        //Homey.manager('flow').trigger('countdown_timer_changed', tokens, state);
+
+        variableManager.updateVariable(obj.name,-1,'number','');
 			}
 			if (obj.value > 0) {
 				variableManager.updateVariable(obj.name, obj.value - 1, 'number','');
-        Homey.manager('flow').trigger('countdown_timer_changed', tokens, state);
+
+        //Homey.manager('flow').trigger('countdown_timer_changed', tokens, state);
 			}
 		});
 	};

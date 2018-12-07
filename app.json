@@ -1,7 +1,7 @@
 {
-  "id": "nl.bevlogenheid.countdownsdk2",
+  "id": "nl.bevlogenheid.countdown",
   "name": {
-    "en": "2 CountDown"
+    "en": "CountDown"
   },
   "version": "2.0.0",
   "compatibility": ">=1.5.0",
@@ -31,21 +31,6 @@
   "dependencies": {},
   "flow": {
     "triggers": [
-      {
-        "id": "if_variable_set",
-        "title": {
-          "en": "New timer created"
-        },
-        "args": [
-          {
-            "name": "variable",
-            "type": "autocomplete",
-            "placeholder": {
-              "en": "Variable name"
-            }
-          }
-        ]
-      },
       {
         "id": "countdown_to_zero",
         "title": {
