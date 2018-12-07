@@ -31,7 +31,7 @@ class CountDown extends Homey.App {
 
 
 
-	var currentVariables= variableManager.getvariables();
+	var currentVariables= variableManager.getVariables();
   this.log(currentVariables.length);
   var uniqueUserId = Homey.ManagerSettings.get('uniqueUserId');
   this.log(uniqueUserId);
@@ -66,7 +66,7 @@ class CountDown extends Homey.App {
 
 	setInterval(timers_update,1000);
 	function timers_update() {
-		var currentVariables= variableManager.getvariables();
+    var currentVariables= variableManager.getVariables();
 		//this.log(currentVariables);
 	        currentVariables.forEach(function( obj) {
 		 	//this.log(obj.name);
@@ -82,10 +82,10 @@ class CountDown extends Homey.App {
 				//var state = { 'variable' : obj.name };
 				Homey.manager('flow').trigger('countdown_to_zero', tokens, state);
         Homey.manager('flow').trigger('countdown_timer_changed', tokens, state);
-	  		variableManager.updatevariable(obj.name,-1,'number','');
+	  		variableManager.updateVariable(obj.name,-1,'number','');
 			}
 			if (obj.value > 0) {
-				variableManager.updatevariable(obj.name, obj.value - 1, 'number','');
+				variableManager.updateVariable(obj.name, obj.value - 1, 'number','');
         Homey.manager('flow').trigger('countdown_timer_changed', tokens, state);
 			}
 		});

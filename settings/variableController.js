@@ -10,25 +10,26 @@ angular.module('CountDownApp', ['smart-table'])
 
         vm.init = function(homey, scope) {
             vm.homey = homey;
-            vm.homey.get('variables', function(err, newvariables) {
-                //console.log(newvariables);
-                if (!newvariables) {
+            vm.homey.get('variables', function(err, newVariables) {
+                //console.log(newVariables);
+                if (!newVariables) {
                     // No variables found in settings
-                    newvariables = [];
+                    newVariables = [];
                 }
                 scope.$apply(function() {
-                    vm.variables = newvariables;
+                    vm.variables = newVariables;
                 });
             });
             vm.homey.on('setting_changed', function(name) {
-                vm.homey.get('variables', function(err, newvariables) {
-                    console.log(newvariables);
-                    if (!newvariables) {
-                        newvariables = [];
+                console.log(name);
+                    vm.homey.get('variables', function(err, newVariables) {
+                    //console.log(newVariables);
+                    if (!newVariables) {
+                        newVariables = [];
                     }
                     if ( vm.locktable == false ) {
                         $scope.$apply(function() {
-                          vm.variables = newvariables;
+                          vm.variables = newVariables;
                          });
                     }
                     console.log(vm.variables);
@@ -44,7 +45,6 @@ angular.module('CountDownApp', ['smart-table'])
                 name: vm.newVariable.name,
                 type: "number",
                 value: "-1",
-                hasInsights: vm.newVariable.hasInsights,
                 lastChanged: getShortDate(),
                 remove:false
             };
@@ -114,11 +114,14 @@ angular.module('CountDownApp', ['smart-table'])
             else return 'display';
         };
 
-        function storeVariable(variables, variable) {
-            var changeObject = {
-                variable: variable
-            };
-            console.log('storeVariable')
+        function storeVariable(variable) {
+          var changeObject = {
+              variable: variable
+          };
+            console.log('-----')
+            console.log(variable)
+            console.log('+++++')
+            console.log(changeObject);
             vm.homey.set('changedvariables', changeObject, function (err) { console.log(err)});
         }
 
