@@ -4,34 +4,35 @@ angular.module('CountDownApp', ['smart-table'])
         vm.errorMessage = '';
         vm.showExportToggle = false;
         vm.showImportToggle = false;
-        vm.locktable = false;
         vm.importJson = '';
         vm.selected = {};
         vm.homey;
-        vm.setHomey = function(homey, scope) {
+
+        vm.init = function(homey, scope) {
             vm.homey = homey;
-            vm.homey.get('variables', function(err, newvariables) {
-                //console.log(newvariables);
-                if (!newvariables) {
+            vm.homey.get('variables', function(err, newVariables) {
+                //console.log(newVariables);
+                if (!newVariables) {
                     // No variables found in settings
-                    newvariables = [];
+                    newVariables = [];
                 }
                 scope.$apply(function() {
-                    vm.variables = newvariables;
+                    vm.variables = newVariables;
                 });
             });
             vm.homey.on('setting_changed', function(name) {
-                vm.homey.get('variables', function(err, newvariables) {
-                    //console.log(newvariables);
-                    if (!newvariables) {
-                        newvariables = [];
+                console.log(name);
+                    vm.homey.get('variables', function(err, newVariables) {
+                    //console.log(newVariables);
+                    if (!newVariables) {
+                        newVariables = [];
                     }
                     if ( vm.locktable == false ) {
                         $scope.$apply(function() {
-                          vm.variables = newvariables;
+                          vm.variables = newVariables;
                          });
                     }
-                    //console.log(vm.variables);
+                    console.log(vm.variables);
                 });
             });
         }
@@ -44,12 +45,12 @@ angular.module('CountDownApp', ['smart-table'])
                 name: vm.newVariable.name,
                 type: "number",
                 value: "-1",
-                hasInsights: vm.newVariable.hasInsights,
                 lastChanged: getShortDate(),
                 remove:false
             };
+            //console.log(variable);
             vm.variables.push(variable);
-            storeVariable(angular.copy(vm.variables), variable);
+            storeVariable(variable);
             vm.errorMessage = '';
             vm.newVariable = {}
         };
@@ -62,7 +63,7 @@ angular.module('CountDownApp', ['smart-table'])
             var toDeleteVariable = vm.variables[index];
             toDeleteVariable.remove = true;
             vm.variables.splice(index, 1);
-            storeVariable(angular.copy(vm.variables), toDeleteVariable);
+            storeVariable(toDeleteVariable);
         };
 
         vm.showExport = function() {
@@ -72,15 +73,16 @@ angular.module('CountDownApp', ['smart-table'])
             vm.showImportToggle = !vm.showImportToggle;
         };
 
-        vm.import = function () {
+        vm.import = function() {
             var newVars = angular.fromJson(vm.importJson);
             vm.deleteAll();
-            vm.homey.set('variables', newVars);
+            newVars.forEach(function(variable) {
+                storeVariable(variable);
+            });
             vm.variables = newVars;
-            };
+        };
 
         vm.editVariable = function(variable) {
-            vm.locktable = true;
             vm.selected = angular.copy(variable);
         };
 
@@ -90,14 +92,12 @@ angular.module('CountDownApp', ['smart-table'])
         var indexDisplay = $scope.displayedCollection.indexOf(row);
         vm.variables[index] = angular.copy(vm.selected);
         $scope.displayedCollection[indexDisplay] = angular.copy(vm.selected);
-        storeVariable(angular.copy(vm.variables), vm.selected);
-        vm.locktable=false;
+        storeVariable(vm.selected);
         vm.reset();
         };
 
         vm.reset = function() {
             vm.selected = {};
-            vm.locktable=false;
         };
 
         vm.selectUpdate = function(type) {
@@ -114,13 +114,31 @@ angular.module('CountDownApp', ['smart-table'])
             else return 'display';
         };
 
-        function storeVariable(variables, variable) {
-            var changeObject = {
-                variables: variables,
-                variable: variable
+        function storeVariable(variable) {
+          var changeObject = {
+              variable: variable
+          };
+            console.log('-----')
+            console.log(variable)
+            console.log('+++++')
+            console.log(changeObject);
+            vm.homey.set('changedvariables', changeObject, function (err) { console.log(err)});
+        }
+
+        function deleteAllVariables() {
+            //I need to pass in this dummy or else it does not work....?
+            var dummyVar = {
+                name: "",
+                type: "",
+                value: "",
+                lastChanged: getShortDate(),
+                remove: false
+            };
+            var dummyChangedObject = {
+                variable: dummyVar
             };
 
-            vm.homey.set('changedvariables', changeObject);
+            vm.homey.set('deleteall', dummyChangedObject, function (err) { console.log(err)});
         }
     });
 
