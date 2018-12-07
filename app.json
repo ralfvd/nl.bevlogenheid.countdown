@@ -115,9 +115,10 @@
           "en": "Timer value has changed",
           "nl": "Zandloper waarde is veranderd"
         },
-        "tokens": [
+        "token": [
           {
             "name": "variable",
+            "type": "string",
             "title": {
               "en": "name timer",
               "nl": "naam zandloper"
@@ -125,7 +126,7 @@
           },
           {
             "name": "value",
-            "type": "number",
+            "type": "string",
             "title": {
               "en": "value",
               "nl": "waarde"
@@ -257,7 +258,7 @@
           },
           {
             "name": "value",
-            "type": "text",
+            "type": "number",
             "placeholder": {
               "en": "seconds",
               "nl": "seconden"
@@ -282,7 +283,7 @@
           },
           {
             "name": "valuemin",
-            "type": "text",
+            "type": "number",
             "placeholder": {
               "en": "min. seconds",
               "nl": "min. seconden"
@@ -290,7 +291,7 @@
           },
           {
             "name": "valuemax",
-            "type": "text",
+            "type": "number",
             "placeholder": {
               "en": "max. seconds",
               "nl": "max. seconden"
@@ -315,7 +316,7 @@
           },
           {
             "name": "value",
-            "type": "text",
+            "type": "number",
             "placeholder": {
               "en": "seconds",
               "nl": "seconden"
