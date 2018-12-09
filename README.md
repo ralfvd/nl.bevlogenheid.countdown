@@ -77,6 +77,7 @@ If you like the app, consider a donation to support development
 
 ### Changelog
 
+- V2.0.3 2018-12-09 : Code clean-up
 - V2.0.2 2018-12-08 : Bugfix of bugfix
 - V2.0.1 2018-12-07 : Bugfix for one trigger card
 - V2.0.0 2018-12-07 : SDK2 enabled
