@@ -1,0 +1,18 @@
+{
+	"settings": {
+    "title": "CountDown-Timer Verwaltung",
+    "removeWarning": "Beachte, dass das Entfernen von Timern Flows unbrauchbar machen kann, die diesen Timer verwenden.",
+    "addTimer": "CountDown-Timer hinzufügen",
+    "timerName": "CountDown-Timer Name",
+    "addTimer": "Timer hinzufügen",
+    "export": "Exportieren",
+    "import": "Importieren",
+    "deleteAll": "Alle Löschen",
+    "exportedValues": "<b>Exportiere Variablen:</b><br />Kopieren die Auswahl, um deine Konfiguration offline zu speichern.",
+    "importedValues": "<b>Importiere Variablen:</b><br />Füge in das Feld die exportierten Werten ein. Beachten, dass alle vorhandenen Werte entfernt werden.",
+    "name": "Name",
+    "lastAction": "Letzte Aktion",
+    "remain": "Verbleibende Sekunden",
+    "searchName": "Suche nach Name"
+	}
+}
