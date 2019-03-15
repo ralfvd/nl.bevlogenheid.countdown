@@ -73,7 +73,7 @@
             "name": "variable",
             "title": {
               "en": "Name timer",
-              "nl": "Naam zandloper"
+              "nl": "Naam zandloper",
               "de": "Timer-Name"
             }
           }
@@ -94,14 +94,16 @@
         "id": "countdown_stopped",
         "title": {
           "en": "Timer has stopped",
-          "nl": "Zandloper is gestopt"
+          "nl": "Zandloper is gestopt",
+          "de": "Timer wurde gestoppt",
         },
         "token": [
           {
             "name": "variable",
             "title": {
               "en": "Name timer",
-              "nl": "Naam zandloper"
+              "nl": "Naam zandloper",
+              "de": "Timer-Name"
             }
           }
         ],
@@ -131,7 +133,7 @@
             "title": {
               "en": "name timer",
               "nl": "naam zandloper",
-              "de": "Timer Name"
+              "de": "Timer-Name"
             }
           },
           {
