@@ -1,6 +1,6 @@
 {
 	"settings": {
-		"title": "CountDown timer management",
+    "title": "CountDown timer management",
     "removeWarning": "Be aware that removing timers could corrupt flows that are using that timer.",
     "addTimer": "Add CountDown timer",
     "timerName": "CountDown timer name",
@@ -13,6 +13,11 @@
     "name": "Name",
     "lastAction": "Last action",
     "remain": "Remaining seconds",
-    "searchName": "search for name"
+    "searchName": "search for name",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "cancel": "Cancel",
+    "value": "value"
 	}
 }
