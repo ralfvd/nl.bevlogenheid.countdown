@@ -13,6 +13,11 @@
     "name": "Name",
     "lastAction": "Letzte Aktion",
     "remain": "Verbleibende Sekunden",
-    "searchName": "Suche nach Name"
+    "searchName": "Suche nach Name",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "value": "Wert"
 	}
 }
