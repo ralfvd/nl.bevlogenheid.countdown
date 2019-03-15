@@ -184,7 +184,7 @@
         "title": {
           "en": "!{{CountDown is exact|Countdown is not exactly}}",
           "nl": "!{{Zandloper is precies|Zandloper is ongelijk aan}}",
-          "en": "!{{CountDown ist genau|Der Countdown ist nicht genau}}",
+          "de": "!{{CountDown ist genau|Der Countdown ist nicht genau}}"
         },
         "args": [
           {
