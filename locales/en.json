@@ -1,1 +1,18 @@
-{}
+{
+	"settings": {
+		"title": "CountDown timer management",
+    "removeWarning": "Be aware that removing timers could corrupt flows that are using that timer.",
+    "addTimer": "Add CountDown timer",
+    "timerName": "CountDown timer name",
+    "addTimer": "Add timer ",
+    "export": "Export",
+    "import": "Import",
+    "deleteAll": "Delete All",
+    "exportedValues": "<b>Exported values:</b><br />Copy selection below to save your configuration offline.",
+    "importedValues": "<b>Import values:</b><br /> Paste in the box below the exported values. Be aware that all existing values will be removed.",
+    "name": "Name",
+    "lastAction": "Last action",
+    "remain": "Remaining seconds",
+    "searchName": "search for name"
+	}
+}
