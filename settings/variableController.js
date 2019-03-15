@@ -10,6 +10,13 @@ angular.module('CountDownApp', ['smart-table'])
 
         vm.init = function(homey, scope) {
             vm.homey = homey;
+			//Add language variables
+			vm.i18nEdit = Homey.__('settings.edit');
+			vm.i18nDelete = Homey.__('settings.delete');
+			vm.i18nSave = Homey.__('settings.save');
+			vm.i18nCancel = Homey.__('settings.cancel');
+			vm.i18nValue = Homey.__('settings.value');
+			//End language variables
             vm.homey.get('variables', function(err, newVariables) {
                 //console.log(newVariables);
                 if (!newVariables) {
