@@ -10,54 +10,52 @@
 </head>
 
 <body ng-controller="VariableSettingsController as vm">
-    <h2>CountDown timer management</h2>
-    <p>Be aware that removing timers could corrupt flows that are using that timer.</p>
+    <h2 data-i18n="settings.title"></h2>
+    <p data-i18n="settings.removeWarning"></p>
     <div>
         <div class="panel panel-default">
-            <div class="panel-heading">Add CountDown timer</div>
+            <div class="panel-heading" data-i18n="settings.addTimer"></div>
             <div class="panel-body">
                 <form role="form">
                     <div class="form-group">
-                        <label for="variableName">CountDown timer name</label>
+                        <label for="variableName" data-i18n="settings.timerName">CountDown timer name</label>
                         <input class="form-control" id="variableName" type="text" ng-model="vm.newVariable.name" placeholder="Name"><span class="error">{{vm.errorMessage}}</span>
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-default" type="button" ng-disabled="!vm.newVariable.name" ng-click="vm.addVariable()">Add timer </button>
-                        <button class="btn btn-default" type="button" ng-click="vm.showExport()">Export</button>
-                        <button class="btn btn-default" type="button" ng-click="vm.showImport()">Import</button>
-                        <button class="btn btn-default" type="button" ng-click="vm.deleteAll()">Delete All</button>
+                        <button data-i18n="settings.addTimer" class="btn btn-default" type="button" ng-disabled="!vm.newVariable.name" ng-click="vm.addVariable()"></button>
+                        <button data-i18n="settings.export" class="btn btn-default" type="button" ng-click="vm.showExport()"></button>
+                        <button data-i18n="settings.import" class="btn btn-default" type="button" ng-click="vm.showImport()"></button>
+                        <button data-i18n="settings.deleteAll" class="btn btn-default" type="button" ng-click="vm.deleteAll()"></button>
                     </div>
                 </form>
             </div>
         </div>
         <div ng-show="vm.showExportToggle">
-           <b>Exported values:</b><br />
-           Copy selection below to save your configuration offline.
+           <p data-i18n="exportedValues"></p>
            <p>
                <textarea rows="6" cols="60">{{vm.variables | json}}</textarea>
            </p>
        </div>
        <div ng-show="vm.showImportToggle">
-           <b>Import values:</b><br />
-           Paste in the box below the exported values. Be aware that all existing values will be removed.
+           <p data-i18n="importedValues"></p>
            <p>
                <textarea rows="6" cols="60" ng-Model="vm.importJson"></textarea>
                <div class="form-group">
-                   <button class="btn btn-default" type="button" ng-click="vm.import()">Import</button>
+                   <button class="btn btn-default" type="button" ng-click="vm.import()" data-i18n="settings.import"></button>
                </div>
            </p>
        </div>
         <table st-safe-src="vm.variables" st-table="displayedCollection" class="table table-striped">
             <thead>
                 <tr>
-                    <th st-sort="name">Name</th>
-                    <th st-sort="lastChanged" st-sort-default="reverse">Last action</th>
-                    <th st-sort="value">Remaining seconds</th>
+                    <th st-sort="name" data-i18n="settings.name"></th>
+                    <th st-sort="lastChanged" st-sort-default="reverse" data-i18n="settings.lastAction"></th>
+                    <th st-sort="value" data-i18n="settings.remain"></th>
                     <th></th>
                 </tr>
                 <tr>
                     <th>
-                        <input st-search="name" placeholder="search for name" class="input-sm form-control" type="search" />
+                        <input st-search="name" data-i18n-placeholder="settings.searchName" class="input-sm form-control" type="search" />
                     </th>
                     <th>
                     </th>
