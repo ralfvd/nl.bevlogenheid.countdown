@@ -88,7 +88,7 @@
 <script type="text/ng-template" id="edit">
         <td>{{vm.selected.name}}</td>
         <td>{{variable.lastChanged | date:'yyyy-MM-dd HH:mm:ss' }}</td>
-        <!--<td><input class="col-xs-2" id="variableValue" type="checkbox" ng-model="vm.selected.hasInsights" data-i18n-placeholder="settings.value"></td>-->
+        <!--<td><input data-i18n-placeholder="settings.value" class="col-xs-2" id="variableValue" type="checkbox" ng-model="vm.selected.hasInsights"></td>-->
         <td>
             <div ng-switch on="vm.selected.type">
                 <div ng-switch-when="boolean"><div ng-include="'editboolean.html'"></div></div>
@@ -97,28 +97,28 @@
             </div>
         </td>
         <td>
-            <button ng-click="vm.saveVariable(variable)" data-i18n="settings.save"></button>
-            <button ng-click="vm.reset()" data-i18n="settings.cancel"></button>
+            <button data-i18n="settings.save" ng-click="vm.saveVariable(variable)"></button>
+            <button data-i18n="settings.cancel" ng-click="vm.reset()"></button>
         </td>
     </script>
 
     <script type="text/ng-template" id="addnumber.html">
-        <input class="form-control" id="variableValue" type="number" ng-disabled="!vm.newVariable.name||!vm.newVariable.type" ng-model="vm.newVariable.value" data-i18n-placeholder="settings.value">
+        <input data-i18n-placeholder="settings.value" class="form-control" id="variableValue" type="number" ng-disabled="!vm.newVariable.name||!vm.newVariable.type" ng-model="vm.newVariable.value">
     </script>
     <script type="text/ng-template" id="addstring.html">
-        <input class="form-control" id="variableValue" type="text" ng-disabled="!vm.newVariable.name||!vm.newVariable.type" ng-model="vm.newVariable.value" data-i18n-placeholder="settings.value">
+        <input data-i18n-placeholder="settings.value" class="form-control" id="variableValue" type="text" ng-disabled="!vm.newVariable.name||!vm.newVariable.type" ng-model="vm.newVariable.value">
     </script>
     <script type="text/ng-template" id="addboolean.html">
-        <input id="variableValue" type="checkbox" ng-disabled="!vm.newVariable.name||!vm.newVariable.type" ng-model="vm.newVariable.value" data-i18n-placeholder="settings.value">
+        <input data-i18n-placeholder="settings.value" id="variableValue" type="checkbox" ng-disabled="!vm.newVariable.name||!vm.newVariable.type" ng-model="vm.newVariable.value">
     </script>
     <script type="text/ng-template" id="editnumber.html">
-        <input class="form-control col-xs-2" id="variableValue" type="number" ng-model="vm.selected.value" data-i18n-placeholder="settings.value">
+        <input data-i18n-placeholder="settings.value" class="form-control col-xs-2" id="variableValue" type="number" ng-model="vm.selected.value">
     </script>
     <script type="text/ng-template" id="editstring.html">
-        <input class="form-control col-xs-2" id="variableValue" type="text" ng-model="vm.selected.value" data-i18n-placeholder="settings.value">
+        <input data-i18n-placeholder="settings.value" class="form-control col-xs-2" id="variableValue" type="text" ng-model="vm.selected.value">
     </script>
     <script type="text/ng-template" id="editboolean.html">
-        <input class="col-xs-2" id="variableValue" type="checkbox" ng-model="vm.selected.value" data-i18n-placeholder="settings.value">
+        <input data-i18n-placeholder="settings.value" class="col-xs-2" id="variableValue" type="checkbox" ng-model="vm.selected.value">
     </script>
 <script>
     // Initialize Homey
