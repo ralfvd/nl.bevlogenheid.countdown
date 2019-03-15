@@ -1,0 +1,23 @@
+{
+	"settings": {
+    "title": "CountDown-Timer Verwaltung",
+    "removeWarning": "Houd er rekening mee dat het verwijderen van timers kan leiden tot beschadiging van flows die deze timer gebruiken.",
+    "addTimer": "CountDown-timer toevoegen",
+    "timerName": "CountDown-timer Naam",
+    "addTimer": "Timer toevoegen",
+    "export": "Exporteren",
+    "import": "Importeren",
+    "deleteAll": "Alles verwijderen",
+    "exportedValues": "<b>Exporteerde waarden:</b><br />Kopieer onderstaande selectie om uw configuratie offline op te slaan",
+    "importedValues": "<b>Invoerwaarden:</b><br />In het vakje onder de geëxporteerde waarden plakken. Houd er rekening mee dat alle bestaande waarden worden verwijderd.",
+    "name": "Name",
+    "lastAction": "Laatste actie",
+    "remain": "Resterende seconden",
+    "searchName": "zoeken op naam",
+    "edit": "redactie",
+    "delete": "verwijderen",
+    "save": "opslaan",
+    "cancel": "aborteren",
+    "value": "waarde"
+	}
+}
