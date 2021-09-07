@@ -61,6 +61,7 @@ angular.module('CountDownApp', ['smart-table'])
         vm.removeVariable = function (row) {
             var index = vm.variables.indexOf(row);
             var toDeleteVariable = vm.variables[index];
+            console.log(toDeleteVariable);
             toDeleteVariable.remove = true;
             vm.variables.splice(index, 1);
             storeVariable(toDeleteVariable);

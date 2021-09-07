@@ -1,9 +1,10 @@
 {
   "id": "nl.bevlogenheid.countdown",
   "name": {
-    "en": "CountDown"
+    "en": "CountDown",
+    "nl": "CountDown"
   },
-  "version": "2.0.3",
+  "version": "2.0.6",
   "compatibility": ">=1.5.0",
   "sdk": 2,
   "description": {
@@ -14,6 +15,10 @@
     "name": "Ralf van Dooren",
     "email": "ralfvd@gmail.com"
   },
+  "tags": {
+    "en": ["countdown","timer","timers"],
+    "nl": ["zandloper","countdown","timer","tijd"]
+  },
   "contributing": {
     "donate": {
       "paypal": {
@@ -21,6 +26,10 @@
       }
     }
   },
+  "bugs": {
+    "url": "https://github.com/ralfvd/nl.bevlogenheid.countdown/issues"
+  },
+  "support": "mailto:ralfvd@gmail.com",
   "images": {
     "large": "./assets/images/large.jpg",
     "small": "./assets/images/small.jpg"
@@ -62,6 +71,58 @@
         "title": {
           "en": "Timer has started",
           "nl": "Zandloper is gestart"
+        },
+        "token": [
+          {
+            "name": "variable",
+            "title": {
+              "en": "Name timer",
+              "nl": "Naam zandloper"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Countdown timer name",
+              "nl": "Zandloper naam"
+            }
+          }
+        ]
+      },
+      {
+        "id": "countdown_updated",
+        "title": {
+          "en": "Timer has been updated",
+          "nl": "Zandloper is bijgewerkt"
+        },
+        "token": [
+          {
+            "name": "variable",
+            "title": {
+              "en": "Name timer",
+              "nl": "Naam zandloper"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Countdown timer name",
+              "nl": "Zandloper naam"
+            }
+          }
+        ]
+      },
+      {
+        "id": "countdown_started_updated",
+        "title": {
+          "en": "Timer has been started or updated",
+          "nl": "Zandloper is gestart of bijgewerkt"
         },
         "token": [
           {
@@ -245,7 +306,7 @@
         "id": "set_countdown_timer",
         "title": {
           "en": "Start countdown timer",
-          "nl": "Draai zandloper om"
+          "nl": "Start zandloper"
         },
         "args": [
           {
@@ -327,7 +388,8 @@
       {
         "id": "stop_countdown_timer",
         "title": {
-          "en": "Stop countdown timer"
+          "en": "Stop countdown timer",
+          "nl": "Stop zandloper"
         },
         "args": [
           {

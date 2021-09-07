@@ -1,5 +1,7 @@
 "use strict";
 
+//require('inspector').open(9229, '0.0.0.0')
+
 var fs = require('fs');
 var variableManager = require('./lib/variablemanagement/variablemanagement.js');
 var util = require('./lib/util/util.js');
@@ -18,7 +20,7 @@ const Homey = require('homey');
 class CountDown extends Homey.App {
 
   onInit() {
-	this.log("CountDown started");
+	this.log("CountDown 2.0.6 started");
 	variableManager.init();
 
 	//flowActions.createActions();
@@ -31,6 +33,7 @@ class CountDown extends Homey.App {
   this.log(currentVariables.length);
   var uniqueUserId = Homey.ManagerSettings.get('uniqueUserId');
   this.log(uniqueUserId);
+  //this.log(currentVariables);
         if (!util.value_exist(uniqueUserId)) {
             uniqueUserId = util.generateUniqueId();
             Homey.ManagerSettings.set('uniqueUserId', uniqueUserId);
@@ -64,14 +67,14 @@ class CountDown extends Homey.App {
 	function timers_update() {
     var currentVariables= variableManager.getVariables();
 		//this.log(currentVariables);
-	        currentVariables.forEach(function( obj) {
-		 	//this.log(obj.name);
+	  currentVariables.forEach(function( obj) {
+  	 	//this.log(obj.name);
 			//this.log(obj.value);
       //this.log(typeof obj.value);
       //this.log('----');
       var tokens = { 'variable' : obj.name, 'value' : obj.value };
       var state = { 'variable' : obj.name };
-      if (obj.value == 0) {
+      if (obj.value == 0 || obj.value < 0 ) {
 				//this.log("Value triggered: ",obj.value);
 				// Homey.manager('flow').trigger('countdown_test');
 				//var tokens = { 'variable' : obj.name };
