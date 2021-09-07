@@ -1,5 +1,3 @@
-Homey CountDown timer
-
 This is a CountDown app which you can use to initiate flows.
 
 Examples: When motion is detected, turn on light and start a timer for 90 seconds
@@ -63,8 +61,3 @@ Greater than/less than conditions was coded by Petter Alstermark
 Donate
 
 If you like the app, consider a donation to support development
-
-ToDo
-
-- Clean-up code
-- Translation to NL
