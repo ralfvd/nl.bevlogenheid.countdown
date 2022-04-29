@@ -20,7 +20,7 @@ const Homey = require('homey');
 class CountDown extends Homey.App {
 
   onInit() {
-	this.log("CountDown 2.0.6 started");
+	this.log("CountDown 2.1.0 started");
 	variableManager.init();
 
 	//flowActions.createActions();
@@ -66,14 +66,16 @@ class CountDown extends Homey.App {
 	setInterval(timers_update,1000);
 	function timers_update() {
     var currentVariables= variableManager.getVariables();
-		//this.log(currentVariables);
+    //this.log(currentVariables);
 	  currentVariables.forEach(function( obj) {
+      //console.log(obj)
   	 	//this.log(obj.name);
 			//this.log(obj.value);
       //this.log(typeof obj.value);
       //this.log('----');
       var tokens = { 'variable' : obj.name, 'value' : obj.value };
       var state = { 'variable' : obj.name };
+      //console.log(obj.name, obj.value, obj.pause)
       if (obj.value == 0 || obj.value < 0 ) {
 				//this.log("Value triggered: ",obj.value);
 				// Homey.manager('flow').trigger('countdown_test');
@@ -82,12 +84,12 @@ class CountDown extends Homey.App {
 
         //Homey.manager('flow').trigger('countdown_to_zero', tokens, state);
         //Homey.manager('flow').trigger('countdown_timer_changed', tokens, state);
-
-        variableManager.updateVariable(obj.name,-1,'number','');
+        variableManager.updateVariable(obj.name,-1,'number','0');
 			}
-			if (obj.value > 0) {
-				variableManager.updateVariable(obj.name, obj.value - 1, 'number','');
-
+			if (obj.value > 0 && obj.pause != 1 ) {
+        //console.log(obj)
+        //console.log(obj.name, obj.value, obj.pause);
+			  variableManager.updateVariable(obj.name, obj.value - 1, 'number','0');
         //Homey.manager('flow').trigger('countdown_timer_changed', tokens, state);
 			}
 		});
