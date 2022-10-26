@@ -45,12 +45,14 @@ angular.module('CountDownApp', ['smart-table'])
                 name: vm.newVariable.name,
                 type: "number",
                 value: "-1",
+                pause: "0",
+                remove: false,
                 lastChanged: getShortDate(),
-                remove:false
             };
-            //console.log(variable);
+            console.log(variable);
             vm.variables.push(variable);
-            storeVariable(variable);
+            //storeVariable(variable);
+            storeVariable(angular.copy(vm.variables), variable);
             vm.errorMessage = '';
             vm.newVariable = {}
         };
@@ -61,9 +63,12 @@ angular.module('CountDownApp', ['smart-table'])
         vm.removeVariable = function (row) {
             var index = vm.variables.indexOf(row);
             var toDeleteVariable = vm.variables[index];
+            console.log(toDeleteVariable);
             toDeleteVariable.remove = true;
             vm.variables.splice(index, 1);
-            storeVariable(toDeleteVariable);
+            storeVariable(angular.copy(vm.variables),toDeleteVariable);
+            //storeVariable(toDeleteVariable);
+
         };
 
         vm.showExport = function() {
@@ -76,9 +81,7 @@ angular.module('CountDownApp', ['smart-table'])
         vm.import = function() {
             var newVars = angular.fromJson(vm.importJson);
             vm.deleteAll();
-            newVars.forEach(function(variable) {
-                storeVariable(variable);
-            });
+            vm.homey.set('variables', newVars);
             vm.variables = newVars;
         };
 
@@ -92,7 +95,8 @@ angular.module('CountDownApp', ['smart-table'])
         var indexDisplay = $scope.displayedCollection.indexOf(row);
         vm.variables[index] = angular.copy(vm.selected);
         $scope.displayedCollection[indexDisplay] = angular.copy(vm.selected);
-        storeVariable(vm.selected);
+        //storeVariable(vm.selected);
+        storeVariable(angular.copy(vm.variables), vm.selected);
         vm.reset();
         };
 
@@ -114,8 +118,11 @@ angular.module('CountDownApp', ['smart-table'])
             else return 'display';
         };
 
-        function storeVariable(variable) {
+
+   function storeVariable(variables, variable) {
+//    function storeVariable(variable) {
           var changeObject = {
+              variables: variables,
               variable: variable
           };
             console.log('-----')
