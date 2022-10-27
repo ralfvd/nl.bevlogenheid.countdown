@@ -35,7 +35,7 @@ let variableManager = module.exports = {
 
             if (action == 'changedvariables') {
                 util.cdLog('set variable management')
-                var changeObject = homey.get('changedvariables');
+                var changeObject = homey.settings.get('changedvariables');
                 //util.cdLog(changeObject)
                 var newVariables = changeObject.variables;
                 var newVariable = changeObject.variable;
@@ -82,9 +82,9 @@ let variableManager = module.exports = {
                 type: type,
                 remove: false,
                 pause: pause,
-                auto,
                 lastChanged: getShortDate()
             }
+            if(auto!==undefined) newVariable.auto = auto;
 
             console.log(newVariable)
             variables.unshift(newVariable);
@@ -94,6 +94,8 @@ let variableManager = module.exports = {
             console.log('end remote entry fix');
 
         }
+
+        
         // remove entry fix
 
         //console.log('start update variable: ' + name, value, type, pause, remove)
@@ -123,9 +125,9 @@ let variableManager = module.exports = {
                 type: type,
                 remove: remove,
                 pause: '0',
-                auto,
                 lastChanged: getShortDate()
             };
+            if(auto!==undefined) newVariable.auto = auto;
             if (!remove) {
                 variables.unshift(newVariable);
                 homey.api.realtime('setting_changed', newVariable);
@@ -142,9 +144,9 @@ let variableManager = module.exports = {
                 type: type,
                 remove: false,
                 pause: '1',
-                auto,
                 lastChanged: getShortDate()
             }
+            if(auto!==undefined) newVariable.auto = auto;
             variables.unshift(newVariable);
             variables.splice(variables.indexOf(oldVariable), 1);
             homey.api.realtime('setting_changed', newVariable);
@@ -152,7 +154,7 @@ let variableManager = module.exports = {
             variables.splice(variables.indexOf(oldVariable), 1);
 
         }
-        else if (oldVariable.pause === '1' && pause === '0') {
+        else if (oldVariable && oldVariable.pause === '1' && pause === '0') {
             console.log('resume: ' + name + ' ' + pause)
             const newVariable = {
                 name: name,
@@ -160,9 +162,9 @@ let variableManager = module.exports = {
                 type: type,
                 remove: false,
                 pause: '0',
-                auto,
                 lastChanged: getShortDate()
             }
+            if(auto!==undefined) newVariable.auto = auto;
             variables.unshift(newVariable);
             variables.splice(variables.indexOf(oldVariable), 1);
             homey.api.realtime('setting_changed', newVariable);
@@ -172,7 +174,7 @@ let variableManager = module.exports = {
         }
 
         // if value didn't change, immediately exit routine
-        else if (oldVariable.value === value && !remove) {
+        else if (oldVariable && oldVariable.value === value && !remove) {
             //console.log('return ' + name)
             return;
         }
@@ -187,9 +189,9 @@ let variableManager = module.exports = {
                     type: type,
                     remove: false,
                     pause: '0',
-                    auto,
                     lastChanged: getShortDate()
                 }
+                if(auto!==undefined) newVariable.auto = auto;
                 variables.unshift(newVariable);
                 variables.splice(variables.indexOf(oldVariable), 1);
                 homey.api.realtime('setting_changed', newVariable);
@@ -229,6 +231,16 @@ let variableManager = module.exports = {
     },
     addVariable: function(name) {
         return variableManager.updateVariable(name, -1, "number", "0", false, true);
+    },
+    removeVariable: function(name) {
+        let variable = this.getVariable(name);
+        if(!variable) return;
+        const variables = getVariables();
+        variables.splice(variables.indexOf(variable), 1);
+        processValueChanged(variables);
+        homey.api.realtime('setting_changed', variable);
+        return true;
+        //return variableManager.updateVariable(name, -1, "number", "0", true, undefined);
     }
 };
 
@@ -261,7 +273,7 @@ function processValueChanged(variables, oldVariable, newVariable) {
     }
 
     if (newVariable && oldVariable && oldVariable.value && newVariable.pause == 1) {
-        console.log('Variable ' + newVariable.name + ' paused')
+        console.log('Variable ' + newVariable.name + ' paused');
         //getTrigger('timer_paused').trigger(null, { "variable": newVariable.name, "value": newVariable.value });
         //removeToken(newVariable.name)
         //createToken(newVariable.name, newVariable.value, 'number', '1');
