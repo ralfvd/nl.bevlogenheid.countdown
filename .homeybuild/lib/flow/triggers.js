@@ -52,7 +52,7 @@ module.exports = {
         added = true;
       } //else lastQuery = null;
 
-      if(lastQuery && lastQuery.length && !l.find(x=>x.name.toLowerCase()===(''||lastQuery).toLowerCase()) && !allVariables.find(x=>x.name.toLowerCase()===(''||lastQuery).toLowerCase())) {
+      if(lastQuery && lastQuery.length && !query.startsWith(lastQuery) && !l.find(x=>x.name.toLowerCase()===(''||lastQuery).toLowerCase()) && !allVariables.find(x=>x.name.toLowerCase()===(''||lastQuery).toLowerCase())) {
         let a = {name:lastQuery, type:'number', description:'Just added'};
         if(added) l.splice(1,0,a);
         else l.unshift(a);
