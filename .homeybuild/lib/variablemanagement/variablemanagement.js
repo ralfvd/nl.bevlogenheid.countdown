@@ -7,7 +7,7 @@ var tokens = [];
 
 const Homey = require('homey');
 let homey;
-module.exports = {
+let variableManager = module.exports = {
     init: function (_homeyCD) {
         homey = _homeyCD;
         util.cdLog("variable manager started");
@@ -59,7 +59,7 @@ module.exports = {
     getVariable: function (variable) {
         return findVariable(getVariables(), variable);
     },
-    updateVariable: function (name, value, type, pause, remove) {
+    updateVariable: function (name, value, type, pause, remove, auto) {
         const variables = getVariables();
         const oldVariable = findVariable(variables, name);
 
@@ -70,7 +70,7 @@ module.exports = {
         }
 
         // remove entry fix
-        if (typeof oldVariable.remove === 'undefined') {
+        if (oldVariable && typeof oldVariable.remove === 'undefined') {
             console.log('start remote entry fix');
             console.log("fix remove: " + name);
             console.log(oldVariable);
@@ -82,6 +82,7 @@ module.exports = {
                 type: type,
                 remove: false,
                 pause: pause,
+                auto,
                 lastChanged: getShortDate()
             }
 
@@ -122,6 +123,7 @@ module.exports = {
                 type: type,
                 remove: remove,
                 pause: '0',
+                auto,
                 lastChanged: getShortDate()
             };
             if (!remove) {
@@ -132,7 +134,7 @@ module.exports = {
             }
         }
 
-        if (oldVariable.pause === '0' && pause === '1') {
+        if (oldVariable && oldVariable.pause === '0' && pause === '1') {
             console.log('pause: ' + name + ' ' + pause)
             const newVariable = {
                 name: name,
@@ -140,6 +142,7 @@ module.exports = {
                 type: type,
                 remove: false,
                 pause: '1',
+                auto,
                 lastChanged: getShortDate()
             }
             variables.unshift(newVariable);
@@ -157,6 +160,7 @@ module.exports = {
                 type: type,
                 remove: false,
                 pause: '0',
+                auto,
                 lastChanged: getShortDate()
             }
             variables.unshift(newVariable);
@@ -183,6 +187,7 @@ module.exports = {
                     type: type,
                     remove: false,
                     pause: '0',
+                    auto,
                     lastChanged: getShortDate()
                 }
                 variables.unshift(newVariable);
@@ -221,6 +226,9 @@ module.exports = {
     },
     createToken : function (name, value, type, pause) {
         return createToken(name, value, type, pause);
+    },
+    addVariable: function(name) {
+        return variableManager.updateVariable(name, -1, "number", "0", false, true);
     }
 };
 
@@ -241,7 +249,7 @@ function processValueChanged(variables, oldVariable, newVariable) {
     if (newVariable && newVariable.remove) {
         //removeInsights(newVariable.name);
         //homey.insights.deleteLog(newVariable.name, function(err, state) {});
-        console.log("processValueChanged: remove: " + newVariable.name)
+        console.log("processValueChanged: remove: " + newVariable.name);
         removeToken(newVariable.name);
         return;
     }

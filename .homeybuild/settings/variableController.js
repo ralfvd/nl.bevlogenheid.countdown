@@ -54,7 +54,7 @@ angular.module('CountDownApp', ['smart-table'])
             //storeVariable(variable);
             storeVariable(angular.copy(vm.variables), variable);
             vm.errorMessage = '';
-            vm.newVariable = {}
+            vm.newVariable = {};
         };
         vm.deleteAll = function() {
             vm.homey.set('variables',[] );
