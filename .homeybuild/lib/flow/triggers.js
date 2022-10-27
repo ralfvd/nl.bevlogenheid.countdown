@@ -57,7 +57,7 @@ module.exports = {
         if(added) l.splice(1,0,a);
         else l.unshift(a);
       }
-      lastQuery = query;
+      if(query && query.length) lastQuery = query;
       
       return l;
     };
