@@ -5,6 +5,8 @@
 var fs = require('fs');
 let variableManager = require('./lib/variablemanagement/variablemanagement.js');
 var util = require('./lib/util/util.js');
+
+const _ = require('lodash-core');
 //var FlowCardTrigger = require('./flow/triggers.js');
 
 //var autoCompleteActions = require('./lib/autocomplete/actions.js');

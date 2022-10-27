@@ -1,8 +1,8 @@
 {
-  "id": "sdk3.bevlogenheid.countdown",
+  "id": "nl.bevlogenheid.countdown",
   "name": {
-    "en": "CountDown SDK3",
-    "nl": "CountDown SDK3"
+    "en": "CountDown",
+    "nl": "CountDown"
   },
   "version": "3.0.0",
   "compatibility": ">=5.0.0",
