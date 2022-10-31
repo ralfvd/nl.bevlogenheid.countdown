@@ -26,7 +26,7 @@ class CountDown extends Homey.App {
 
   async onInit() {
     //if (process.env.DEBUG === '1') require('inspector').open(9231, '0.0.0.0', true);
-    this.log("CountDown 3.0.2 started");
+    this.log("CountDown 3.0.3 started");
     //console.log(this.homey.settings.get('variables'))
     variableManager.init(this.homey);
 
