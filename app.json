@@ -7,7 +7,7 @@
   "version": "3.0.2",
   "compatibility": ">=5.0.0",
   "sdk": 3,
-    "description": {
+  "description": {
     "en": "Use CountDown timers to control your flows",
     "nl": "Gebruik CountDown timers als zandloper om af te tellen naar een actie in een flow"
   },
@@ -16,12 +16,25 @@
     "email": "ralfvd@gmail.com"
   },
   "contributor": {
-    "name": "Arie J. Godschalk",
-    "email": "arie@qluster-it.nl"
+    "developers": [
+      {
+        "name": "Arie J. Godschalk",
+        "email": "arie@qluster-it.nl"
+      }
+    ]
   },
   "tags": {
-    "en": ["countdown","timer","timers"],
-    "nl": ["zandloper","countdown","timer","tijd"]
+    "en": [
+      "countdown",
+      "timer",
+      "timers"
+    ],
+    "nl": [
+      "zandloper",
+      "countdown",
+      "timer",
+      "tijd"
+    ]
   },
   "contributing": {
     "donate": {
