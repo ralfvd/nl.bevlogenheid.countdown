@@ -4,7 +4,7 @@
     "en": "CountDown",
     "nl": "CountDown"
   },
-  "version": "3.0.0",
+  "version": "3.0.2",
   "compatibility": ">=5.0.0",
   "sdk": 3,
     "description": {
@@ -14,6 +14,10 @@
   "author": {
     "name": "Ralf van Dooren",
     "email": "ralfvd@gmail.com"
+  },
+  "contributor": {
+    "name": "Arie J. Godschalk",
+    "email": "arie@qluster-it.nl"
   },
   "tags": {
     "en": ["countdown","timer","timers"],

@@ -1,0 +1,11 @@
+{
+  "3.0.0": {
+    "en": "SDK3 rewrite + creating timers in flow"
+  },
+  "3.0.1": {
+    "en": "README.txt adjusted"
+  },
+  "3.0.2": {
+    "en": "Fixed Adjust countdown timer card"
+  }
+}
