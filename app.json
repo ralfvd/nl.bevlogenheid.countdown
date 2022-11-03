@@ -4,7 +4,7 @@
     "en": "CountDown",
     "nl": "CountDown"
   },
-  "version": "3.0.4",
+  "version": "3.0.5",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "description": {
@@ -25,15 +25,17 @@
   },
   "tags": {
     "en": [
-      "countdown",
+      "countdowns",
       "timer",
-      "timers"
+      "timers",
+      "transitions"
     ],
     "nl": [
       "zandloper",
-      "countdown",
-      "timer",
-      "tijd"
+      "countdowns",
+      "timers",
+      "tijd",
+      "transities"
     ]
   },
   "contributing": {

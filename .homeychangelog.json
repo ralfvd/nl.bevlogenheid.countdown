@@ -10,5 +10,8 @@
   },
   "3.0.3": {
     "en": "Token fix"
+  },
+  "3.0.4": {
+    "en": "Improved: Delete confirm in App Settings."
   }
 }
