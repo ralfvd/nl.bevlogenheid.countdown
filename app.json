@@ -66,6 +66,9 @@
           "en": "Timer reaches zero (0)",
           "nl": "Zandloper leeg"
         },
+        "titleFormatted": {
+          "en": "Timer [[variable]] reaches zero"
+        },
         "token": [
           {
             "name": "variable",
@@ -91,6 +94,9 @@
         "title": {
           "en": "Timer has started",
           "nl": "Zandloper is gestart"
+        },
+        "titleFormatted": {
+          "en": "Timer [[variable]] started"
         },
         "token": [
           {
@@ -118,6 +124,9 @@
           "en": "Timer has been updated",
           "nl": "Zandloper is bijgewerkt"
         },
+        "titleFormatted": {
+          "en": "Timer [[variable]] is updated"
+        },
         "token": [
           {
             "name": "variable",
@@ -143,6 +152,9 @@
         "title": {
           "en": "Timer has been started or updated",
           "nl": "Zandloper is gestart of bijgewerkt"
+        },
+        "titleFormatted": {
+          "en": "Timer [[variable]] starts or is updated"
         },
         "token": [
           {
@@ -170,6 +182,9 @@
           "en": "Timer has stopped",
           "nl": "Zandloper is gestopt"
         },
+        "titleFormatted": {
+          "en": "Timer [[variable]] stops"
+        },
         "token": [
           {
             "name": "variable",
@@ -195,6 +210,9 @@
         "title": {
           "en": "Timer value has changed",
           "nl": "Zandloper waarde is veranderd"
+        },
+        "titleFormatted": {
+          "en": "Timer [[variable]]'s value changes"
         },
         "token": [
           {
@@ -233,6 +251,9 @@
           "en": "Timer !{{not|}} running",
           "nl": "Zandloper loopt !{{niet|}}"
         },
+        "titleFormatted": {
+          "en": "Timer [[variable]] is !{{not|}} running"
+        },
         "args": [
           {
             "name": "variable",
@@ -249,6 +270,9 @@
         "title": {
           "en": "!{{CountDown is exact|Countdown is not exactly}}",
           "nl": "!{{Zandloper is precies|Zandloper is ongelijk aan}}"
+        },
+        "titleFormatted": {
+          "en": "Timer [[variable]] is {{exactly|not exactly}} [[value]]"
         },
         "args": [
           {
@@ -275,6 +299,9 @@
           "en": "!{{CountDown is less than|Countdown is not less than}}",
           "nl": "!{{Zandloper is kleiner dan|Zandloper is niet kleiner dan}}"
         },
+        "titleFormatted": {
+          "en": "Timer [[variable]] is {{less than|not less than}} [[value]]"
+        },
         "args": [
           {
             "name": "variable",
@@ -299,6 +326,9 @@
         "title": {
           "en": "!{{CountDown is greater than|Countdown is not greater than}}",
           "nl": "!{{Zandloper is groter dan|Zandloper is niet groter dan}}"
+        },
+        "titleFormatted": {
+          "en": "Timer [[variable]] is {{greater than|not greater than}} [[value]]"
         },
         "args": [
           {
@@ -325,6 +355,9 @@
           "en": "!{{Timer is paused|Timer isn't paused}}",
           "nl": "!{{Zandloper is gepauzeerd|Zandloper is niet gepauzeerd}}"
         },
+        "titleFormatted": {
+          "en": "Timer [[variable]] is paused"
+        },
         "args": [
           {
             "name": "variable",
@@ -343,6 +376,9 @@
         "title": {
           "en": "Start countdown timer",
           "nl": "Start zandloper"
+        },
+        "titleFormatted": {
+          "en": "Start timer [[variable]] at [[value]]s"
         },
         "args": [
           {
@@ -368,6 +404,9 @@
         "title": {
           "en": "start random CountDown",
           "nl": "Zandloper met willekeurige eindtijd"
+        },
+        "titleFormatted": {
+          "en": "Start timer [[variable]] with a time between [[valuemin]]s and [[valuemax]]s"
         },
         "args": [
           {
@@ -402,6 +441,9 @@
           "en": "Adjust countdown timer",
           "nl": "Pas zandloper aan"
         },
+        "titleFormatted": {
+          "en": "Adjust timer [[variable]] by [[value]]s"
+        },
         "args": [
           {
             "name": "variable",
@@ -427,6 +469,9 @@
           "en": "Stop countdown timer",
           "nl": "Stop zandloper"
         },
+        "titleFormatted": {
+          "en": "Stop timer [[variable]]"
+        },
         "args": [
           {
             "name": "variable",
@@ -451,6 +496,9 @@
           "en": "Pause countdown timer",
           "nl": "Pauzeer zandloper"
         },
+        "titleFormatted": {
+          "en": "Pause timer [[variable]]"
+        },
         "args": [
           {
             "name": "variable",
@@ -467,6 +515,9 @@
         "title": {
           "en": "Resume countdown timer",
           "nl": "Hervat zandloper"
+        },
+        "titleFormatted": {
+          "en": "Resume timer [[variable]]"
         },
         "args": [
           {
