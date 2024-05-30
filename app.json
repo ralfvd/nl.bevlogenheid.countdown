@@ -1,11 +1,12 @@
 {
   "id": "nl.bevlogenheid.countdown",
   "name": {
-    "en": "CountDown"
+    "en": "CountDown",
+    "nl": "CountDown"
   },
-  "version": "2.0.0",
-  "compatibility": ">=1.5.0",
-  "sdk": 2,
+  "version": "3.0.6",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
   "description": {
     "en": "Use CountDown timers to control your flows",
     "nl": "Gebruik CountDown timers als zandloper om af te tellen naar een actie in een flow"
@@ -14,6 +15,29 @@
     "name": "Ralf van Dooren",
     "email": "ralfvd@gmail.com"
   },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Arie J. Godschalk",
+        "email": "arie@qluster-it.nl"
+      }
+    ]
+  },
+  "tags": {
+    "en": [
+      "countdowns",
+      "timer",
+      "timers",
+      "transitions"
+    ],
+    "nl": [
+      "zandloper",
+      "countdowns",
+      "timers",
+      "tijd",
+      "transities"
+    ]
+  },
   "contributing": {
     "donate": {
       "paypal": {
@@ -21,6 +45,10 @@
       }
     }
   },
+  "bugs": {
+    "url": "https://github.com/ralfvd/nl.bevlogenheid.countdown/issues"
+  },
+  "support": "mailto:ralfvd@gmail.com",
   "images": {
     "large": "./assets/images/large.jpg",
     "small": "./assets/images/small.jpg"
@@ -28,6 +56,7 @@
   "category": [
     "tools"
   ],
+  "brandColor": "#A1896E",
   "dependencies": {},
   "flow": {
     "triggers": [
@@ -84,6 +113,58 @@
         ]
       },
       {
+        "id": "countdown_updated",
+        "title": {
+          "en": "Timer has been updated",
+          "nl": "Zandloper is bijgewerkt"
+        },
+        "token": [
+          {
+            "name": "variable",
+            "title": {
+              "en": "Name timer",
+              "nl": "Naam zandloper"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Countdown timer name",
+              "nl": "Zandloper naam"
+            }
+          }
+        ]
+      },
+      {
+        "id": "countdown_started_updated",
+        "title": {
+          "en": "Timer has been started or updated",
+          "nl": "Zandloper is gestart of bijgewerkt"
+        },
+        "token": [
+          {
+            "name": "variable",
+            "title": {
+              "en": "Name timer",
+              "nl": "Naam zandloper"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Countdown timer name",
+              "nl": "Zandloper naam"
+            }
+          }
+        ]
+      },
+      {
         "id": "countdown_stopped",
         "title": {
           "en": "Timer has stopped",
@@ -115,9 +196,10 @@
           "en": "Timer value has changed",
           "nl": "Zandloper waarde is veranderd"
         },
-        "tokens": [
+        "token": [
           {
             "name": "variable",
+            "type": "string",
             "title": {
               "en": "name timer",
               "nl": "naam zandloper"
@@ -125,7 +207,7 @@
           },
           {
             "name": "value",
-            "type": "number",
+            "type": "string",
             "title": {
               "en": "value",
               "nl": "waarde"
@@ -236,15 +318,31 @@
             }
           }
         ]
+      },
+      {
+        "id": "timer_paused",
+        "title": {
+          "en": "!{{Timer is paused|Timer isn't paused}}",
+          "nl": "!{{Zandloper is gepauzeerd|Zandloper is niet gepauzeerd}}"
+        },
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "CountDown name",
+              "nl": "Zandloper naam"
+            }
+          }
+        ]
       }
-
     ],
     "actions": [
       {
         "id": "set_countdown_timer",
         "title": {
           "en": "Start countdown timer",
-          "nl": "Draai zandloper om"
+          "nl": "Start zandloper"
         },
         "args": [
           {
@@ -326,7 +424,8 @@
       {
         "id": "stop_countdown_timer",
         "title": {
-          "en": "Stop countdown timer"
+          "en": "Stop countdown timer",
+          "nl": "Stop zandloper"
         },
         "args": [
           {
@@ -345,6 +444,40 @@
           "en": "Stop all countdown timers",
           "nl": "Stop alle zandlopers"
         }
+      },
+      {
+        "id": "pause_countdown_timer",
+        "title": {
+          "en": "Pause countdown timer",
+          "nl": "Pauzeer zandloper"
+        },
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "name",
+              "nl": "naam"
+            }
+          }
+        ]
+      },
+      {
+        "id": "resume_countdown_timer",
+        "title": {
+          "en": "Resume countdown timer",
+          "nl": "Hervat zandloper"
+        },
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "name",
+              "nl": "naam"
+            }
+          }
+        ]
       }
     ]
   }
