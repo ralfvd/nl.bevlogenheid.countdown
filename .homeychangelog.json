@@ -1,0 +1,26 @@
+{
+  "3.0.0": {
+    "en": "SDK3 rewrite + creating timers in flow"
+  },
+  "3.0.1": {
+    "en": "README.txt adjusted"
+  },
+  "3.0.2": {
+    "en": "Fixed Adjust countdown timer card"
+  },
+  "3.0.3": {
+    "en": "Token fix"
+  },
+  "3.0.4": {
+    "en": "Improved: Delete confirm in App Settings."
+  },
+  "3.0.5": {
+    "en": "Small bugfixes"
+  },
+  "3.0.6": {
+    "en": "Small bugfixes for the tokens."
+  },
+  "3.0.7": {
+    "en": "Better descriptions of flow cards"
+  }
+}
