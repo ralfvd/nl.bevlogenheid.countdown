@@ -4,7 +4,7 @@
     "en": "CountDown",
     "nl": "CountDown"
   },
-  "version": "3.0.7",
+  "version": "3.1.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "description": {
@@ -85,6 +85,40 @@
             }
           }
         ]
+      },
+      {
+          "id": "countdown_reaches_number",
+          "title": {
+            "en": "Timer [[variable]] reaches [[value]] seconds",
+            "nl": "Zandloper [[variable]] heeft nog [[value]] seconden"
+          },
+          "token": [
+            {
+              "name": "variable",
+              "title": {
+                "en": "Name timer",
+                "nl": "Naam zandloper"
+              }
+            }
+          ],
+          "args": [
+            {
+              "name": "variable",
+              "type": "autocomplete",
+              "placeholder": {
+                "en": "Countdown timer name",
+                "nl": "Zandloper naam"
+              }
+            },
+            {
+              "name": "value",
+              "type": "number",
+              "placeholder": {
+                "en": "value",
+                "nl": "waarde"
+              }
+            }
+          ]
       },
       {
         "id": "countdown_started",

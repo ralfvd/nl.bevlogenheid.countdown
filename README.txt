@@ -6,7 +6,7 @@ Examples: When motion is detected, turn on light and start a timer for 90 second
 
 Settings
 
-After installing the application, you can create CountDown timers in a flow. 
+After installing the application, you can create CountDown timers in a flow.
 
 In the app settings of CountDown, you can also add, remove, import and export timers.
 
@@ -17,6 +17,7 @@ Flow support
 Triggers:
 
 	- When a CountDown timer reaches 0. This will be the most used trigger.
+	- When a CountDown timer reaches a certain value
 	- When a CountDown timer has started
 	- When a CountDown timer has stopped before reaching 0.
 	- When a CountDown timer has changed its value
@@ -42,15 +43,15 @@ There are 4 condition cards:
 
 Acknowledgement
 
-The CountDown timer is heavily influenced and inspired by the BetterLogic app. 
+The CountDown timer is heavily influenced and inspired by the BetterLogic app.
 
-SDK3 rewrite was mainly done by Arie J. Godschalk 
+SDK3 rewrite was mainly done by Arie J. Godschalk
 
 The Condition card was suggested (and code provided) by GeurtDijker
 
 The Start/Stop triggers cards were suggested by MarkSwift
 
-Import / Export code by Patrick Sannes 
+Import / Export code by Patrick Sannes
 
 The trigger/condition combination for checking a value was suggested by YvesGeffens
 
@@ -60,7 +61,7 @@ Greater than/less than conditions was coded by Petter Alstermark
 
 Donate
 
-If you like the app, consider a donation to support development  
+If you like the app, consider a donation to support development
 
 ToDo
 
